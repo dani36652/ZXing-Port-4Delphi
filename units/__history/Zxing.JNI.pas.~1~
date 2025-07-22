@@ -1,0 +1,3074 @@
+unit Zxing.JNI;
+
+interface
+
+uses
+  Androidapi.JNIBridge, Androidapi.JNI.JavaTypes;
+
+type
+  JAI013x0xDecoder = interface;
+  JAI01decoder = interface;
+  JAI01weightDecoder = interface;
+  JAbstractDoCoMoResultParser = interface;
+  JAbstractExpandedDecoder = interface;
+  JAbstractRSSReader = interface;
+  JAddressBookAUResultParser = interface;
+  JAddressBookDoCoMoResultParser = interface;
+  JAddressBookParsedResult = interface;
+  JAlignmentPattern = interface;
+  JAztecCode = interface;
+  JAztecDetectorResult = interface;
+  JAztecReader = interface;
+  JAztecWriter = interface;
+  JBarcodeFormat = interface;
+  JBarcodeMatrix = interface;
+  JBinarizer = interface;
+  JBinaryBitmap = interface;
+  JBitArray = interface;
+  JBitMatrix = interface;
+  JBitSource = interface;
+  JBizcardResultParser = interface;
+  JBookmarkDoCoMoResultParser = interface;
+  JByQuadrantReader = interface;
+  JByteMatrix = interface;
+  JCalendarParsedResult = interface;
+  JCharacterSetECI = interface;
+  JChecksumException = interface;
+  JCodaBarReader = interface;
+  JCodaBarWriter = interface;
+  JCode128Reader = interface;
+  JCode128Writer = interface;
+  JCode39Reader = interface;
+  JCode39Writer = interface;
+  JCode93Reader = interface;
+  JCode93Writer = interface;
+  JCompaction = interface;
+  JDataCharacter = interface;
+  JDataMask = interface;
+  JDataMatrixReader = interface;
+  JDataMatrixWriter = interface;
+  JDecodeHintType = interface;
+  JDecodedObject = interface;
+  JDecoder = interface;
+  JDecoderResult = interface;
+  JDefaultGridSampler = interface;
+  JDefaultPlacement = interface;
+  JDetector = interface;
+  JDetectorResult = interface;
+  JDimension = interface;
+  JDimensions = interface;
+  JEAN13Reader = interface;
+  JEAN13Writer = interface;
+  JEAN8Reader = interface;
+  JEAN8Writer = interface;
+  JECIEncoderSet = interface;
+  JECIInput = interface;
+  JECIStringBuilder = interface;
+  JEmailAddressParsedResult = interface;
+  JEmailAddressResultParser = interface;
+  JEmailDoCoMoResultParser = interface;
+  JEncodeHintType = interface;
+  JEncoder = interface;
+  JErrorCorrection = interface;
+  JErrorCorrectionLevel = interface;
+  JExpandedProductParsedResult = interface;
+  JExpandedProductResultParser = interface;
+  JFinderPattern = interface;
+  JFinderPatternFinder = interface;
+  JFinderPatternInfo = interface;
+  JFormatException = interface;
+  JGenericGF = interface;
+  JGenericMultipleBarcodeReader = interface;
+  JGeoParsedResult = interface;
+  JGeoResultParser = interface;
+  JGlobalHistogramBinarizer = interface;
+  JGridSampler = interface;
+  JHighLevelEncoder = interface;
+  JHybridBinarizer = interface;
+  JISBNParsedResult = interface;
+  JISBNResultParser = interface;
+  JITFReader = interface;
+  JITFWriter = interface;
+  JInvertedLuminanceSource = interface;
+  JLuminanceSource = interface;
+  JMathUtils = interface;
+  JMaxiCodeReader = interface;
+  JMinimalECIInput = interface;
+  JMinimalEncoder = interface;
+  JMode = interface;
+  JModulusGF = interface;
+  JMonochromeRectangleDetector = interface;
+  JMultiDetector = interface;
+  JMultiFinderPatternFinder = interface;
+  JMultiFormatOneDReader = interface;
+  JMultiFormatReader = interface;
+  JMultiFormatUPCEANReader = interface;
+  JMultiFormatWriter = interface;
+  JMultipleBarcodeReader = interface;
+  JNotFoundException = interface;
+  JOneDReader = interface;
+  JOneDimensionalCodeWriter = interface;
+  JPDF417 = interface;
+  JPDF417Common = interface;
+  JPDF417DetectorResult = interface;
+  JPDF417HighLevelEncoderTestAdapter = interface;
+  JPDF417Reader = interface;
+  JPDF417ResultMetadata = interface;
+  JPDF417ScanningDecoder = interface;
+  JPDF417Writer = interface;
+  JParsedResult = interface;
+  JParsedResultType = interface;
+  JPerspectiveTransform = interface;
+  JPlanarYUVLuminanceSource = interface;
+  JProductParsedResult = interface;
+  JProductResultParser = interface;
+  JQRCode = interface;
+  JQRCodeDecoderMetaData = interface;
+  JQRCodeMultiReader = interface;
+  JQRCodeReader = interface;
+  JQRCodeWriter = interface;
+  JRGBLuminanceSource = interface;
+  JRSS14Reader = interface;
+  JRSSExpandedReader = interface;
+  JRSSUtils = interface;
+  JReader = interface;
+  JReaderException = interface;
+  JReedSolomonDecoder = interface;
+  JReedSolomonEncoder = interface;
+  JReedSolomonException = interface;
+  JResult = interface;
+  JResultMetadataType = interface;
+  JResultParser = interface;
+  JResultPoint = interface;
+  JResultPointCallback = interface;
+  JSMSMMSResultParser = interface;
+  JSMSParsedResult = interface;
+  JSMSTOMMSTOResultParser = interface;
+  JSMTPResultParser = interface;
+  JStringUtils = interface;
+  JSymbolInfo = interface;
+  JSymbolShapeHint = interface;
+  JTelParsedResult = interface;
+  JTelResultParser = interface;
+  JTextParsedResult = interface;
+  JToken = interface;
+  JUPCAReader = interface;
+  JUPCAWriter = interface;
+  JUPCEANReader = interface;
+  JUPCEANWriter = interface;
+  JUPCEReader = interface;
+  JUPCEWriter = interface;
+  JURIParsedResult = interface;
+  JURIResultParser = interface;
+  JURLTOResultParser = interface;
+  JVCardResultParser = interface;
+  JVEventResultParser = interface;
+  JVINParsedResult = interface;
+  JVINResultParser = interface;
+  JVersion = interface;
+  JVersion_ECBlocks = interface;
+  JWhiteRectangleDetector = interface;
+  JWifiParsedResult = interface;
+  JWifiResultParser = interface;
+  JWriter = interface;
+  JWriterException = interface;
+  Jaztec_decoder_Decoder = interface;
+  Jaztec_detector_Detector = interface;
+  Jdatamatrix_detector_Detector = interface;
+  Jdecoder_Decoder = interface;
+  Jdecoder_Version = interface;
+  Jdetector_Detector = interface;
+  Jdetector_FinderPattern = interface;
+  Jencoder_Encoder = interface;
+  Jencoder_ErrorCorrection = interface;
+  Jencoder_HighLevelEncoder = interface;
+  Jqrcode_decoder_Decoder = interface;
+
+  JMaxiCodeReaderClass = interface(JObjectClass)
+    ['{95C45F21-F145-480B-9FD1-0A8657FF92CF}']
+    {class} function init: JMaxiCodeReader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/maxicode/MaxiCodeReader')]
+  JMaxiCodeReader = interface(JObject)
+    ['{31788EC1-D891-4C6A-AEA0-F5CE726D7685}']
+    function decode(binaryBitmap: JBinaryBitmap; map: JMap): JResult; overload; cdecl;
+    function decode(binaryBitmap: JBinaryBitmap): JResult; overload; cdecl;
+    procedure reset; cdecl;
+  end;
+  TJMaxiCodeReader = class(TJavaGenericImport<JMaxiCodeReaderClass, JMaxiCodeReader>) end;
+
+  Jdecoder_DecoderClass = interface(JObjectClass)
+    ['{16BF24AD-0887-4DDC-808E-BDFD259E0E8D}']
+    {class} function init: Jdecoder_Decoder; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/maxicode/decoder/Decoder')]
+  Jdecoder_Decoder = interface(JObject)
+    ['{0235E2AA-F68E-4C73-AD4A-5E08231AAF53}']
+    function decode(bitMatrix: JBitMatrix; map: JMap): JDecoderResult; overload; cdecl;
+    function decode(bitMatrix: JBitMatrix): JDecoderResult; overload; cdecl;
+  end;
+  TJdecoder_Decoder = class(TJavaGenericImport<Jdecoder_DecoderClass, Jdecoder_Decoder>) end;
+
+  JByQuadrantReaderClass = interface(JObjectClass)
+    ['{43AD28D6-E490-4740-BFB6-64F552823F94}']
+    {class} function init(reader: JReader): JByQuadrantReader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/multi/ByQuadrantReader')]
+  JByQuadrantReader = interface(JObject)
+    ['{1E20D72A-7C54-4BD4-A83C-AFE34D0CE086}']
+    function decode(binaryBitmap: JBinaryBitmap; map: JMap): JResult; overload; cdecl;
+    function decode(binaryBitmap: JBinaryBitmap): JResult; overload; cdecl;
+    procedure reset; cdecl;
+  end;
+  TJByQuadrantReader = class(TJavaGenericImport<JByQuadrantReaderClass, JByQuadrantReader>) end;
+
+  JMultipleBarcodeReaderClass = interface(IJavaClass)
+    ['{9160A7E8-BDAF-4741-9A49-F946582C9202}']
+  end;
+
+  [JavaSignature('com/google/zxing/multi/MultipleBarcodeReader')]
+  JMultipleBarcodeReader = interface(IJavaInstance)
+    ['{FB7F685A-7994-4E2E-B904-BAF9FA12E00C}']
+    function decodeMultiple(binaryBitmap: JBinaryBitmap): TJavaObjectArray<JResult>; overload; cdecl;
+    function decodeMultiple(binaryBitmap: JBinaryBitmap; map: JMap): TJavaObjectArray<JResult>; overload; cdecl;
+  end;
+  TJMultipleBarcodeReader = class(TJavaGenericImport<JMultipleBarcodeReaderClass, JMultipleBarcodeReader>) end;
+
+  JGenericMultipleBarcodeReaderClass = interface(JObjectClass)
+    ['{8EA13E73-E66B-4285-889E-C71CBDA7360B}']
+    {class} function init(reader: JReader): JGenericMultipleBarcodeReader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/multi/GenericMultipleBarcodeReader')]
+  JGenericMultipleBarcodeReader = interface(JObject)
+    ['{4848A54E-8B92-455F-B713-601E5FAE1454}']
+    function decodeMultiple(binaryBitmap: JBinaryBitmap; map: JMap): TJavaObjectArray<JResult>; overload; cdecl;
+    function decodeMultiple(binaryBitmap: JBinaryBitmap): TJavaObjectArray<JResult>; overload; cdecl;
+  end;
+  TJGenericMultipleBarcodeReader = class(TJavaGenericImport<JGenericMultipleBarcodeReaderClass, JGenericMultipleBarcodeReader>) end;
+
+  JDecodeHintTypeClass = interface(JEnumClass)
+    ['{75BCA849-B52B-4E70-9ED2-9F63A484F3DF}']
+    {class} function _GetALLOWED_EAN_EXTENSIONS: JDecodeHintType; cdecl;
+    {class} function _GetALLOWED_LENGTHS: JDecodeHintType; cdecl;
+    {class} function _GetALSO_INVERTED: JDecodeHintType; cdecl;
+    {class} function _GetASSUME_CODE_39_CHECK_DIGIT: JDecodeHintType; cdecl;
+    {class} function _GetASSUME_GS1: JDecodeHintType; cdecl;
+    {class} function _GetCHARACTER_SET: JDecodeHintType; cdecl;
+    {class} function _GetNEED_RESULT_POINT_CALLBACK: JDecodeHintType; cdecl;
+    {class} function _GetOTHER: JDecodeHintType; cdecl;
+    {class} function _GetPOSSIBLE_FORMATS: JDecodeHintType; cdecl;
+    {class} function _GetPURE_BARCODE: JDecodeHintType; cdecl;
+    {class} function _GetRETURN_CODABAR_START_END: JDecodeHintType; cdecl;
+    {class} function _GetTRY_HARDER: JDecodeHintType; cdecl;
+    {class} function valueOf(string_1: JString): JDecodeHintType; cdecl;
+    {class} function values: TJavaObjectArray<JDecodeHintType>; cdecl;
+    {class} property ALLOWED_EAN_EXTENSIONS: JDecodeHintType read _GetALLOWED_EAN_EXTENSIONS;
+    {class} property ALLOWED_LENGTHS: JDecodeHintType read _GetALLOWED_LENGTHS;
+    {class} property ALSO_INVERTED: JDecodeHintType read _GetALSO_INVERTED;
+    {class} property ASSUME_CODE_39_CHECK_DIGIT: JDecodeHintType read _GetASSUME_CODE_39_CHECK_DIGIT;
+    {class} property ASSUME_GS1: JDecodeHintType read _GetASSUME_GS1;
+    {class} property CHARACTER_SET: JDecodeHintType read _GetCHARACTER_SET;
+    {class} property NEED_RESULT_POINT_CALLBACK: JDecodeHintType read _GetNEED_RESULT_POINT_CALLBACK;
+    {class} property OTHER: JDecodeHintType read _GetOTHER;
+    {class} property POSSIBLE_FORMATS: JDecodeHintType read _GetPOSSIBLE_FORMATS;
+    {class} property PURE_BARCODE: JDecodeHintType read _GetPURE_BARCODE;
+    {class} property RETURN_CODABAR_START_END: JDecodeHintType read _GetRETURN_CODABAR_START_END;
+    {class} property TRY_HARDER: JDecodeHintType read _GetTRY_HARDER;
+  end;
+
+  [JavaSignature('com/google/zxing/DecodeHintType')]
+  JDecodeHintType = interface(JEnum)
+    ['{D41E6C6F-B744-4D58-9214-859549EAC5AB}']
+    function getValueType: Jlang_Class; cdecl;
+  end;
+  TJDecodeHintType = class(TJavaGenericImport<JDecodeHintTypeClass, JDecodeHintType>) end;
+
+  JReaderExceptionClass = interface(JExceptionClass)
+    ['{46D35F72-380D-4B7B-B68A-1734B1BE644A}']
+    {class} procedure setStackTrace(boolean: Boolean); cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/ReaderException')]
+  JReaderException = interface(JException)
+    ['{CF85DF2C-7A66-4C9A-B1D7-49FFE1E883F8}']
+    function fillInStackTrace: JThrowable; cdecl;
+  end;
+  TJReaderException = class(TJavaGenericImport<JReaderExceptionClass, JReaderException>) end;
+
+  JQRCodeReaderClass = interface(JObjectClass)
+    ['{4BB9A240-2412-4DD7-A90D-D41FD3390AAB}']
+    {class} function init: JQRCodeReader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/qrcode/QRCodeReader')]
+  JQRCodeReader = interface(JObject)
+    ['{EE8AFE07-D8D1-4077-BD69-09E8978D9D39}']
+    function decode(binaryBitmap: JBinaryBitmap; map: JMap): JResult; overload; cdecl;
+    function decode(binaryBitmap: JBinaryBitmap): JResult; overload; cdecl;
+    procedure reset; cdecl;
+  end;
+  TJQRCodeReader = class(TJavaGenericImport<JQRCodeReaderClass, JQRCodeReader>) end;
+
+  JFinderPatternFinderClass = interface(JObjectClass)
+    ['{6324C319-4CEF-4756-9579-AB66EE6540F4}']
+    {class} function init(bitMatrix: JBitMatrix): JFinderPatternFinder; overload; cdecl;
+    {class} function init(bitMatrix: JBitMatrix; resultPointCallback: JResultPointCallback): JFinderPatternFinder; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/qrcode/detector/FinderPatternFinder')]
+  JFinderPatternFinder = interface(JObject)
+    ['{4D271B76-3189-493A-BAEC-70C8EAFDFE81}']
+  end;
+  TJFinderPatternFinder = class(TJavaGenericImport<JFinderPatternFinderClass, JFinderPatternFinder>) end;
+
+  Jdetector_DetectorClass = interface(JObjectClass)
+    ['{2071BE31-BE5C-483B-82D6-F517E3189BCC}']
+    {class} function init(bitMatrix: JBitMatrix): Jdetector_Detector; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/qrcode/detector/Detector')]
+  Jdetector_Detector = interface(JObject)
+    ['{96907FD5-AB0A-4856-AAAA-A9B41BBDBFAD}']
+    function detect(map: JMap): JDetectorResult; overload; cdecl;
+    function detect: JDetectorResult; overload; cdecl;
+  end;
+  TJdetector_Detector = class(TJavaGenericImport<Jdetector_DetectorClass, Jdetector_Detector>) end;
+
+  JFinderPatternInfoClass = interface(JObjectClass)
+    ['{68D020C1-74DD-464C-9D57-B52F91E913DC}']
+    {class} function init(finderPatterns: TJavaObjectArray<JFinderPattern>): JFinderPatternInfo; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/qrcode/detector/FinderPatternInfo')]
+  JFinderPatternInfo = interface(JObject)
+    ['{EAEF7A18-B04B-44E6-BB6D-23A1D705EB42}']
+    function getBottomLeft: Jdetector_FinderPattern; cdecl;
+    function getTopLeft: Jdetector_FinderPattern; cdecl;
+    function getTopRight: Jdetector_FinderPattern; cdecl;
+  end;
+  TJFinderPatternInfo = class(TJavaGenericImport<JFinderPatternInfoClass, JFinderPatternInfo>) end;
+
+  JQRCodeWriterClass = interface(JObjectClass)
+    ['{0935C63C-FF21-42E3-AD84-4E35E32D7ED9}']
+    {class} function init: JQRCodeWriter; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/qrcode/QRCodeWriter')]
+  JQRCodeWriter = interface(JObject)
+    ['{7F867B7D-E6DF-40C1-AF5D-58900A78102E}']
+    function encode(string_1: JString; barcodeFormat: JBarcodeFormat; int: Integer; int_1: Integer; map: JMap): JBitMatrix; overload; cdecl;
+    function encode(string_1: JString; barcodeFormat: JBarcodeFormat; int: Integer; int_1: Integer): JBitMatrix; overload; cdecl;
+  end;
+  TJQRCodeWriter = class(TJavaGenericImport<JQRCodeWriterClass, JQRCodeWriter>) end;
+
+  JByteMatrixClass = interface(JObjectClass)
+    ['{92F4B427-8A97-4127-AA18-11F23EB63A76}']
+    {class} function init(int: Integer; int_1: Integer): JByteMatrix; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/qrcode/encoder/ByteMatrix')]
+  JByteMatrix = interface(JObject)
+    ['{32255EB2-60DD-4BBE-9822-1772171F5E89}']
+    procedure clear(byte: Byte); cdecl;
+    function get(int: Integer; int_1: Integer): Byte; cdecl;
+    function getArray: TJavaArray<Byte>; cdecl;
+    function getHeight: Integer; cdecl;
+    function getWidth: Integer; cdecl;
+    procedure &set(int: Integer; int_1: Integer; boolean: Boolean); overload; cdecl;
+    procedure &set(int: Integer; int_1: Integer; byte: Byte); overload; cdecl;
+    procedure &set(int: Integer; int_1: Integer; int_2: Integer); overload; cdecl;
+    function toString: JString; cdecl;
+  end;
+  TJByteMatrix = class(TJavaGenericImport<JByteMatrixClass, JByteMatrix>) end;
+
+  Jencoder_EncoderClass = interface(JObjectClass)
+    ['{02B170A8-3746-4B83-8762-FC0FB7332A0C}']
+    {class} function chooseMode(string_1: JString): JMode; cdecl;
+    {class} function encode(string_1: JString; errorCorrectionLevel: JErrorCorrectionLevel; map: JMap): JQRCode; overload; cdecl;
+    {class} function encode(string_1: JString; errorCorrectionLevel: JErrorCorrectionLevel): JQRCode; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/qrcode/encoder/Encoder')]
+  Jencoder_Encoder = interface(JObject)
+    ['{B64B5738-28FC-4B16-8EA7-BAC4C3DDBC1F}']
+  end;
+  TJencoder_Encoder = class(TJavaGenericImport<Jencoder_EncoderClass, Jencoder_Encoder>) end;
+
+  JQRCodeClass = interface(JObjectClass)
+    ['{7CC27FC7-E541-442C-8FD8-6B44A7FEE38A}']
+    {class} function _GetNUM_MASK_PATTERNS: Integer; cdecl;
+    {class} function init: JQRCode; cdecl;
+    {class} function isValidMaskPattern(int: Integer): Boolean; cdecl;
+    {class} property NUM_MASK_PATTERNS: Integer read _GetNUM_MASK_PATTERNS;
+  end;
+
+  [JavaSignature('com/google/zxing/qrcode/encoder/QRCode')]
+  JQRCode = interface(JObject)
+    ['{6FBCD3CF-3377-4F15-BB6A-2F7E7562888F}']
+    function getECLevel: JErrorCorrectionLevel; cdecl;
+    function getMaskPattern: Integer; cdecl;
+    function getMatrix: JByteMatrix; cdecl;
+    function getMode: JMode; cdecl;
+    function getVersion: Jdecoder_Version; cdecl;
+    procedure setECLevel(errorCorrectionLevel: JErrorCorrectionLevel); cdecl;
+    procedure setMaskPattern(int: Integer); cdecl;
+    procedure setMatrix(byteMatrix: JByteMatrix); cdecl;
+    procedure setMode(mode: JMode); cdecl;
+    procedure setVersion(version: JVersion); cdecl;
+    function toString: JString; cdecl;
+  end;
+  TJQRCode = class(TJavaGenericImport<JQRCodeClass, JQRCode>) end;
+
+  Jqrcode_decoder_DecoderClass = interface(JObjectClass)
+    ['{CD0AE89F-A93F-44C2-96D7-CC1CF3EDF068}']
+    {class} function init: Jqrcode_decoder_Decoder; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/qrcode/decoder/Decoder')]
+  Jqrcode_decoder_Decoder = interface(JObject)
+    ['{1351F99B-B8F7-454C-A96B-C14A5473356C}']
+    function decode(bitMatrix: JBitMatrix; map: JMap): JDecoderResult; overload; cdecl;
+    function decode(bitMatrix: JBitMatrix): JDecoderResult; overload; cdecl;
+    function decode(booleanss: TJavaArray<Boolean>; map: JMap): JDecoderResult; overload; cdecl;
+    function decode(booleanss: TJavaArray<Boolean>): JDecoderResult; overload; cdecl;
+  end;
+  TJqrcode_decoder_Decoder = class(TJavaGenericImport<Jqrcode_decoder_DecoderClass, Jqrcode_decoder_Decoder>) end;
+
+  JDataMaskClass = interface(JEnumClass)
+    ['{ACBD4E1F-FF6B-4F75-8324-3EDD1F21D5C1}']
+    {class} function _GetDATA_MASK_000: JDataMask; cdecl;
+    {class} function _GetDATA_MASK_001: JDataMask; cdecl;
+    {class} function _GetDATA_MASK_010: JDataMask; cdecl;
+    {class} function _GetDATA_MASK_011: JDataMask; cdecl;
+    {class} function _GetDATA_MASK_100: JDataMask; cdecl;
+    {class} function _GetDATA_MASK_101: JDataMask; cdecl;
+    {class} function _GetDATA_MASK_110: JDataMask; cdecl;
+    {class} function _GetDATA_MASK_111: JDataMask; cdecl;
+    {class} function valueOf(string_1: JString): JDataMask; cdecl;
+    {class} function values: TJavaObjectArray<JDataMask>; cdecl;
+    {class} property DATA_MASK_000: JDataMask read _GetDATA_MASK_000;
+    {class} property DATA_MASK_001: JDataMask read _GetDATA_MASK_001;
+    {class} property DATA_MASK_010: JDataMask read _GetDATA_MASK_010;
+    {class} property DATA_MASK_011: JDataMask read _GetDATA_MASK_011;
+    {class} property DATA_MASK_100: JDataMask read _GetDATA_MASK_100;
+    {class} property DATA_MASK_101: JDataMask read _GetDATA_MASK_101;
+    {class} property DATA_MASK_110: JDataMask read _GetDATA_MASK_110;
+    {class} property DATA_MASK_111: JDataMask read _GetDATA_MASK_111;
+  end;
+
+  [JavaSignature('com/google/zxing/qrcode/decoder/DataMask')]
+  JDataMask = interface(JEnum)
+    ['{0F93D96C-9199-427D-B8A7-7B3C24612850}']
+  end;
+  TJDataMask = class(TJavaGenericImport<JDataMaskClass, JDataMask>) end;
+
+  JErrorCorrectionLevelClass = interface(JEnumClass)
+    ['{5935CB1D-8DFD-4158-849D-F53B0AD4553E}']
+    {class} function _GetH: JErrorCorrectionLevel; cdecl;
+    {class} function _GetL: JErrorCorrectionLevel; cdecl;
+    {class} function _GetM: JErrorCorrectionLevel; cdecl;
+    {class} function _GetQ: JErrorCorrectionLevel; cdecl;
+    {class} function forBits(int: Integer): JErrorCorrectionLevel; cdecl;
+    {class} function valueOf(string_1: JString): JErrorCorrectionLevel; cdecl;
+    {class} function values: TJavaObjectArray<JErrorCorrectionLevel>; cdecl;
+    {class} property H: JErrorCorrectionLevel read _GetH;
+    {class} property L: JErrorCorrectionLevel read _GetL;
+    {class} property M: JErrorCorrectionLevel read _GetM;
+    {class} property Q: JErrorCorrectionLevel read _GetQ;
+  end;
+
+  [JavaSignature('com/google/zxing/qrcode/decoder/ErrorCorrectionLevel')]
+  JErrorCorrectionLevel = interface(JEnum)
+    ['{3A294A62-14FD-45C6-8569-06B9E25088A7}']
+    function getBits: Integer; cdecl;
+  end;
+  TJErrorCorrectionLevel = class(TJavaGenericImport<JErrorCorrectionLevelClass, JErrorCorrectionLevel>) end;
+
+  JQRCodeDecoderMetaDataClass = interface(JObjectClass)
+    ['{3B34605C-5433-4AA8-8A15-170731885974}']
+  end;
+
+  [JavaSignature('com/google/zxing/qrcode/decoder/QRCodeDecoderMetaData')]
+  JQRCodeDecoderMetaData = interface(JObject)
+    ['{53054D7F-8FD1-488E-ACB1-ED3AF90E4666}']
+    procedure applyMirroredCorrection(resultPoints: TJavaObjectArray<JResultPoint>); cdecl;
+    function isMirrored: Boolean; cdecl;
+  end;
+  TJQRCodeDecoderMetaData = class(TJavaGenericImport<JQRCodeDecoderMetaDataClass, JQRCodeDecoderMetaData>) end;
+
+  Jdecoder_VersionClass = interface(JObjectClass)
+    ['{36DF1DF5-A3FA-4CE2-8C24-250C67061CDB}']
+    {class} function getProvisionalVersionForDimension(int: Integer): Jdecoder_Version; cdecl;
+    {class} function getVersionForNumber(int: Integer): Jdecoder_Version; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/qrcode/decoder/Version')]
+  Jdecoder_Version = interface(JObject)
+    ['{7DA2EA41-A81B-4894-84D4-387125E6B34B}']
+    function getAlignmentPatternCenters: TJavaArray<Integer>; cdecl;
+    function getDimensionForVersion: Integer; cdecl;
+    function getECBlocksForLevel(errorCorrectionLevel: JErrorCorrectionLevel): JVersion_ECBlocks; cdecl;
+    function getTotalCodewords: Integer; cdecl;
+    function getVersionNumber: Integer; cdecl;
+    function toString: JString; cdecl;
+  end;
+  TJdecoder_Version = class(TJavaGenericImport<Jdecoder_VersionClass, Jdecoder_Version>) end;
+
+  JModeClass = interface(JEnumClass)
+    ['{3243063E-4C06-4B2B-A04A-F2686E7A6D4C}']
+    {class} function _GetALPHANUMERIC: JMode; cdecl;
+    {class} function _GetBYTE: JMode; cdecl;
+    {class} function _GetECI: JMode; cdecl;
+    {class} function _GetFNC1_FIRST_POSITION: JMode; cdecl;
+    {class} function _GetFNC1_SECOND_POSITION: JMode; cdecl;
+    {class} function _GetHANZI: JMode; cdecl;
+    {class} function _GetKANJI: JMode; cdecl;
+    {class} function _GetNUMERIC: JMode; cdecl;
+    {class} function _GetSTRUCTURED_APPEND: JMode; cdecl;
+    {class} function _GetTERMINATOR: JMode; cdecl;
+    {class} function forBits(int: Integer): JMode; cdecl;
+    {class} function valueOf(string_1: JString): JMode; cdecl;
+    {class} function values: TJavaObjectArray<JMode>; cdecl;
+    {class} property ALPHANUMERIC: JMode read _GetALPHANUMERIC;
+    {class} property BYTE: JMode read _GetBYTE;
+    {class} property ECI: JMode read _GetECI;
+    {class} property FNC1_FIRST_POSITION: JMode read _GetFNC1_FIRST_POSITION;
+    {class} property FNC1_SECOND_POSITION: JMode read _GetFNC1_SECOND_POSITION;
+    {class} property HANZI: JMode read _GetHANZI;
+    {class} property KANJI: JMode read _GetKANJI;
+    {class} property NUMERIC: JMode read _GetNUMERIC;
+    {class} property STRUCTURED_APPEND: JMode read _GetSTRUCTURED_APPEND;
+    {class} property TERMINATOR: JMode read _GetTERMINATOR;
+  end;
+
+  [JavaSignature('com/google/zxing/qrcode/decoder/Mode')]
+  JMode = interface(JEnum)
+    ['{572C8BDD-8804-4E74-B21A-3AF25E62D429}']
+    function getBits: Integer; cdecl;
+    function getCharacterCountBits(version: JVersion): Integer; cdecl;
+  end;
+  TJMode = class(TJavaGenericImport<JModeClass, JMode>) end;
+
+  JVersion_ECBlocksClass = interface(JObjectClass)
+    ['{D8FF9697-263E-4E05-BC7A-F4456B70CE64}']
+  end;
+
+  [JavaSignature('com/google/zxing/qrcode/decoder/Version$ECBlocks')]
+  JVersion_ECBlocks = interface(JObject)
+    ['{2EFA1D8C-92D4-4750-B5E9-E6F32A9CE198}']
+    function getECBlocks: TJavaObjectArray<JVersion_ECB>; cdecl;
+    function getECCodewordsPerBlock: Integer; cdecl;
+    function getNumBlocks: Integer; cdecl;
+    function getTotalECCodewords: Integer; cdecl;
+  end;
+  TJVersion_ECBlocks = class(TJavaGenericImport<JVersion_ECBlocksClass, JVersion_ECBlocks>) end;
+
+  JResultMetadataTypeClass = interface(JEnumClass)
+    ['{6262C16A-4E68-42DE-BBB1-76DEC003F512}']
+    {class} function _GetBYTE_SEGMENTS: JResultMetadataType; cdecl;
+    {class} function _GetERASURES_CORRECTED: JResultMetadataType; cdecl;
+    {class} function _GetERRORS_CORRECTED: JResultMetadataType; cdecl;
+    {class} function _GetERROR_CORRECTION_LEVEL: JResultMetadataType; cdecl;
+    {class} function _GetISSUE_NUMBER: JResultMetadataType; cdecl;
+    {class} function _GetORIENTATION: JResultMetadataType; cdecl;
+    {class} function _GetOTHER: JResultMetadataType; cdecl;
+    {class} function _GetPDF417_EXTRA_METADATA: JResultMetadataType; cdecl;
+    {class} function _GetPOSSIBLE_COUNTRY: JResultMetadataType; cdecl;
+    {class} function _GetSTRUCTURED_APPEND_PARITY: JResultMetadataType; cdecl;
+    {class} function _GetSTRUCTURED_APPEND_SEQUENCE: JResultMetadataType; cdecl;
+    {class} function _GetSUGGESTED_PRICE: JResultMetadataType; cdecl;
+    {class} function _GetSYMBOLOGY_IDENTIFIER: JResultMetadataType; cdecl;
+    {class} function _GetUPC_EAN_EXTENSION: JResultMetadataType; cdecl;
+    {class} function valueOf(string_1: JString): JResultMetadataType; cdecl;
+    {class} function values: TJavaObjectArray<JResultMetadataType>; cdecl;
+    {class} property BYTE_SEGMENTS: JResultMetadataType read _GetBYTE_SEGMENTS;
+    {class} property ERASURES_CORRECTED: JResultMetadataType read _GetERASURES_CORRECTED;
+    {class} property ERRORS_CORRECTED: JResultMetadataType read _GetERRORS_CORRECTED;
+    {class} property ERROR_CORRECTION_LEVEL: JResultMetadataType read _GetERROR_CORRECTION_LEVEL;
+    {class} property ISSUE_NUMBER: JResultMetadataType read _GetISSUE_NUMBER;
+    {class} property ORIENTATION: JResultMetadataType read _GetORIENTATION;
+    {class} property OTHER: JResultMetadataType read _GetOTHER;
+    {class} property PDF417_EXTRA_METADATA: JResultMetadataType read _GetPDF417_EXTRA_METADATA;
+    {class} property POSSIBLE_COUNTRY: JResultMetadataType read _GetPOSSIBLE_COUNTRY;
+    {class} property STRUCTURED_APPEND_PARITY: JResultMetadataType read _GetSTRUCTURED_APPEND_PARITY;
+    {class} property STRUCTURED_APPEND_SEQUENCE: JResultMetadataType read _GetSTRUCTURED_APPEND_SEQUENCE;
+    {class} property SUGGESTED_PRICE: JResultMetadataType read _GetSUGGESTED_PRICE;
+    {class} property SYMBOLOGY_IDENTIFIER: JResultMetadataType read _GetSYMBOLOGY_IDENTIFIER;
+    {class} property UPC_EAN_EXTENSION: JResultMetadataType read _GetUPC_EAN_EXTENSION;
+  end;
+
+  [JavaSignature('com/google/zxing/ResultMetadataType')]
+  JResultMetadataType = interface(JEnum)
+    ['{FBB52D24-A1A4-4EB0-920B-1EC5878B94D6}']
+  end;
+  TJResultMetadataType = class(TJavaGenericImport<JResultMetadataTypeClass, JResultMetadataType>) end;
+
+  JResultClass = interface(JObjectClass)
+    ['{72437AE1-3EEC-447D-BFD5-68F1FCAA082C}']
+    {class} function init(string_1: JString; bytes: TJavaArray<Byte>; resultPoints: TJavaObjectArray<JResultPoint>; barcodeFormat: JBarcodeFormat): JResult; overload; cdecl;
+    {class} function init(string_1: JString; bytes: TJavaArray<Byte>; resultPoints: TJavaObjectArray<JResultPoint>; barcodeFormat: JBarcodeFormat; long: Int64): JResult; overload; cdecl;
+    {class} function init(string_1: JString; bytes: TJavaArray<Byte>; int: Integer; resultPoints: TJavaObjectArray<JResultPoint>; barcodeFormat: JBarcodeFormat; long: Int64): JResult; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/Result')]
+  JResult = interface(JObject)
+    ['{B0480EC1-9F8B-4982-8EAC-FC4C6A1173E2}']
+    procedure addResultPoints(resultPoints: TJavaObjectArray<JResultPoint>); cdecl;
+    function getBarcodeFormat: JBarcodeFormat; cdecl;
+    function getNumBits: Integer; cdecl;
+    function getRawBytes: TJavaArray<Byte>; cdecl;
+    function getResultMetadata: JMap; cdecl;
+    function getResultPoints: TJavaObjectArray<JResultPoint>; cdecl;
+    function getText: JString; cdecl;
+    function getTimestamp: Int64; cdecl;
+    procedure putAllMetadata(map: JMap); cdecl;
+    procedure putMetadata(resultMetadataType: JResultMetadataType; object_1: JObject); cdecl;
+    function toString: JString; cdecl;
+  end;
+  TJResult = class(TJavaGenericImport<JResultClass, JResult>) end;
+
+  JMultiFormatWriterClass = interface(JObjectClass)
+    ['{8D895DA1-838B-4B67-B0F9-B1137A50E0C3}']
+    {class} function init: JMultiFormatWriter; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/MultiFormatWriter')]
+  JMultiFormatWriter = interface(JObject)
+    ['{58BDF514-63E4-47DC-836F-1DC6FACF26A1}']
+    function encode(string_1: JString; barcodeFormat: JBarcodeFormat; int: Integer; int_1: Integer; map: JMap): JBitMatrix; overload; cdecl;
+    function encode(string_1: JString; barcodeFormat: JBarcodeFormat; int: Integer; int_1: Integer): JBitMatrix; overload; cdecl;
+  end;
+  TJMultiFormatWriter = class(TJavaGenericImport<JMultiFormatWriterClass, JMultiFormatWriter>) end;
+
+  JResultPointClass = interface(JObjectClass)
+    ['{385E89E9-AA7F-4C48-9167-519AAE42773E}']
+    {class} function distance(resultPoint: JResultPoint; resultPoint_1: JResultPoint): Single; cdecl;
+    {class} function init(float: Single; float_1: Single): JResultPoint; cdecl;
+    {class} procedure orderBestPatterns(resultPoints: TJavaObjectArray<JResultPoint>); cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/ResultPoint')]
+  JResultPoint = interface(JObject)
+    ['{AD5777D6-749C-41AB-B749-58714A44C752}']
+    function equals(object_1: JObject): Boolean; cdecl;
+    function getX: Single; cdecl;
+    function getY: Single; cdecl;
+    function hashCode: Integer; cdecl;
+    function toString: JString; cdecl;
+  end;
+  TJResultPoint = class(TJavaGenericImport<JResultPointClass, JResultPoint>) end;
+
+  JGridSamplerClass = interface(JObjectClass)
+    ['{9AFAC96B-303D-45D6-9D62-3FF5898AD09A}']
+    {class} function getInstance: JGridSampler; cdecl;
+    {class} function init: JGridSampler; cdecl;
+    {class} procedure setGridSampler(gridSampler: JGridSampler); cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/GridSampler')]
+  JGridSampler = interface(JObject)
+    ['{D4C48ABF-DEFF-4888-B303-0E9DF7D4E0A0}']
+    function sampleGrid(bitMatrix: JBitMatrix; int: Integer; int_1: Integer; perspectiveTransform: JPerspectiveTransform): JBitMatrix; overload; cdecl;
+    function sampleGrid(bitMatrix: JBitMatrix; int: Integer; int_1: Integer; float: Single; float_1: Single; float_2: Single; float_3: Single; float_4: Single; float_5: Single; float_6: Single; float_7: Single; float_8: Single; float_9: Single; float_10: Single; float_11: Single; float_12: Single; float_13: Single; float_14: Single; float_15: Single): JBitMatrix; overload; cdecl;
+  end;
+  TJGridSampler = class(TJavaGenericImport<JGridSamplerClass, JGridSampler>) end;
+
+  JECIInputClass = interface(IJavaClass)
+    ['{91D6E49F-5855-4BAF-89A9-6B804E319362}']
+  end;
+
+  [JavaSignature('com/google/zxing/common/ECIInput')]
+  JECIInput = interface(IJavaInstance)
+    ['{59B3A2CC-0F7A-4D73-90C4-43E46C19E909}']
+    function charAt(int: Integer): Char; cdecl;
+    function getECIValue(int: Integer): Integer; cdecl;
+    function haveNCharacters(int: Integer; int_1: Integer): Boolean; cdecl;
+    function isECI(int: Integer): Boolean; cdecl;
+    function length: Integer; cdecl;
+    function subSequence(int: Integer; int_1: Integer): JCharSequence; cdecl;
+  end;
+  TJECIInput = class(TJavaGenericImport<JECIInputClass, JECIInput>) end;
+
+  JBitArrayClass = interface(JObjectClass)
+    ['{0E7DA91C-5DA5-483B-A653-BD966B1A91DC}']
+    {class} function init: JBitArray; overload; cdecl;
+    {class} function init(int: Integer): JBitArray; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/BitArray')]
+  JBitArray = interface(JObject)
+    ['{1CA401FC-A33C-4FE2-B363-25A133983811}']
+    procedure appendBit(boolean: Boolean); cdecl;
+    procedure appendBitArray(bitArray: JBitArray); cdecl;
+    procedure appendBits(int: Integer; int_1: Integer); cdecl;
+    procedure clear; cdecl;
+    function clone: JBitArray; overload; cdecl;
+    function clone: JObject; overload; cdecl;
+    function equals(object_1: JObject): Boolean; cdecl;
+    procedure flip(int: Integer); cdecl;
+    function get(int: Integer): Boolean; cdecl;
+    function getBitArray: TJavaArray<Integer>; cdecl;
+    function getNextSet(int: Integer): Integer; cdecl;
+    function getNextUnset(int: Integer): Integer; cdecl;
+    function getSize: Integer; cdecl;
+    function getSizeInBytes: Integer; cdecl;
+    function hashCode: Integer; cdecl;
+    function isRange(int: Integer; int_1: Integer; boolean: Boolean): Boolean; cdecl;
+    procedure reverse; cdecl;
+    procedure &set(int: Integer); cdecl;
+    procedure setBulk(int: Integer; int_1: Integer); cdecl;
+    procedure setRange(int: Integer; int_1: Integer); cdecl;
+    procedure toBytes(int: Integer; bytes: TJavaArray<Byte>; int_1: Integer; int_2: Integer); cdecl;
+    function toString: JString; cdecl;
+    procedure &xor(bitArray: JBitArray); cdecl;
+  end;
+  TJBitArray = class(TJavaGenericImport<JBitArrayClass, JBitArray>) end;
+
+  JMonochromeRectangleDetectorClass = interface(JObjectClass)
+    ['{2AFADA8B-EFD0-4176-A26F-ADA8EE07C4A5}']
+    {class} function init(bitMatrix: JBitMatrix): JMonochromeRectangleDetector; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/detector/MonochromeRectangleDetector')]
+  JMonochromeRectangleDetector = interface(JObject)
+    ['{4CA232F0-E7DA-4281-85B6-59676B142AFE}']
+    function detect: TJavaObjectArray<JResultPoint>; cdecl;
+  end;
+  TJMonochromeRectangleDetector = class(TJavaGenericImport<JMonochromeRectangleDetectorClass, JMonochromeRectangleDetector>) end;
+
+  JWhiteRectangleDetectorClass = interface(JObjectClass)
+    ['{B3A13347-7503-48D5-ACAB-F8265EF3D4AB}']
+    {class} function init(bitMatrix: JBitMatrix; int: Integer; int_1: Integer; int_2: Integer): JWhiteRectangleDetector; overload; cdecl;
+    {class} function init(bitMatrix: JBitMatrix): JWhiteRectangleDetector; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/detector/WhiteRectangleDetector')]
+  JWhiteRectangleDetector = interface(JObject)
+    ['{9A251265-14B0-4BDC-A9FB-DFCE871A0CF9}']
+    function detect: TJavaObjectArray<JResultPoint>; cdecl;
+  end;
+  TJWhiteRectangleDetector = class(TJavaGenericImport<JWhiteRectangleDetectorClass, JWhiteRectangleDetector>) end;
+
+  JMathUtilsClass = interface(JObjectClass)
+    ['{3C271C3F-25B2-4329-B9CA-68A0FE183EF6}']
+    {class} function distance(int: Integer; int_1: Integer; int_2: Integer; int_3: Integer): Single; overload; cdecl;
+    {class} function distance(float: Single; float_1: Single; float_2: Single; float_3: Single): Single; overload; cdecl;
+    {class} function round(float: Single): Integer; cdecl;
+    {class} function sum(ints: TJavaArray<Integer>): Integer; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/detector/MathUtils')]
+  JMathUtils = interface(JObject)
+    ['{7F0B46DB-75A3-4A9C-B3B1-F8DD619C061F}']
+  end;
+  TJMathUtils = class(TJavaGenericImport<JMathUtilsClass, JMathUtils>) end;
+
+  JBitSourceClass = interface(JObjectClass)
+    ['{A7A7C1D6-A582-4EB8-9566-9BE8FAF10BA6}']
+    {class} function init(bytes: TJavaArray<Byte>): JBitSource; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/BitSource')]
+  JBitSource = interface(JObject)
+    ['{1F842A32-19BF-47C2-A35F-BBB35991EEC8}']
+    function available: Integer; cdecl;
+    function getBitOffset: Integer; cdecl;
+    function getByteOffset: Integer; cdecl;
+    function readBits(int: Integer): Integer; cdecl;
+  end;
+  TJBitSource = class(TJavaGenericImport<JBitSourceClass, JBitSource>) end;
+
+  JCharacterSetECIClass = interface(JEnumClass)
+    ['{9064F6E9-05B8-4C8A-B6D5-89D7FF3FAD90}']
+    {class} function _GetASCII: JCharacterSetECI; cdecl;
+    {class} function _GetBig5: JCharacterSetECI; cdecl;
+    {class} function _GetCp1250: JCharacterSetECI; cdecl;
+    {class} function _GetCp1251: JCharacterSetECI; cdecl;
+    {class} function _GetCp1252: JCharacterSetECI; cdecl;
+    {class} function _GetCp1256: JCharacterSetECI; cdecl;
+    {class} function _GetCp437: JCharacterSetECI; cdecl;
+    {class} function _GetEUC_KR: JCharacterSetECI; cdecl;
+    {class} function _GetGB18030: JCharacterSetECI; cdecl;
+    {class} function _GetISO8859_1: JCharacterSetECI; cdecl;
+    {class} function _GetISO8859_10: JCharacterSetECI; cdecl;
+    {class} function _GetISO8859_11: JCharacterSetECI; cdecl;
+    {class} function _GetISO8859_13: JCharacterSetECI; cdecl;
+    {class} function _GetISO8859_14: JCharacterSetECI; cdecl;
+    {class} function _GetISO8859_15: JCharacterSetECI; cdecl;
+    {class} function _GetISO8859_16: JCharacterSetECI; cdecl;
+    {class} function _GetISO8859_2: JCharacterSetECI; cdecl;
+    {class} function _GetISO8859_3: JCharacterSetECI; cdecl;
+    {class} function _GetISO8859_4: JCharacterSetECI; cdecl;
+    {class} function _GetISO8859_5: JCharacterSetECI; cdecl;
+    {class} function _GetISO8859_6: JCharacterSetECI; cdecl;
+    {class} function _GetISO8859_7: JCharacterSetECI; cdecl;
+    {class} function _GetISO8859_8: JCharacterSetECI; cdecl;
+    {class} function _GetISO8859_9: JCharacterSetECI; cdecl;
+    {class} function _GetSJIS: JCharacterSetECI; cdecl;
+    {class} function _GetUTF8: JCharacterSetECI; cdecl;
+    {class} function _GetUnicodeBigUnmarked: JCharacterSetECI; cdecl;
+    {class} function getCharacterSetECI(charset: JCharset): JCharacterSetECI; cdecl;
+    {class} function getCharacterSetECIByName(string_1: JString): JCharacterSetECI; cdecl;
+    {class} function getCharacterSetECIByValue(int: Integer): JCharacterSetECI; cdecl;
+    {class} function valueOf(string_1: JString): JCharacterSetECI; cdecl;
+    {class} function values: TJavaObjectArray<JCharacterSetECI>; cdecl;
+    {class} property ASCII: JCharacterSetECI read _GetASCII;
+    {class} property Big5: JCharacterSetECI read _GetBig5;
+    {class} property Cp1250: JCharacterSetECI read _GetCp1250;
+    {class} property Cp1251: JCharacterSetECI read _GetCp1251;
+    {class} property Cp1252: JCharacterSetECI read _GetCp1252;
+    {class} property Cp1256: JCharacterSetECI read _GetCp1256;
+    {class} property Cp437: JCharacterSetECI read _GetCp437;
+    {class} property EUC_KR: JCharacterSetECI read _GetEUC_KR;
+    {class} property GB18030: JCharacterSetECI read _GetGB18030;
+    {class} property ISO8859_1: JCharacterSetECI read _GetISO8859_1;
+    {class} property ISO8859_10: JCharacterSetECI read _GetISO8859_10;
+    {class} property ISO8859_11: JCharacterSetECI read _GetISO8859_11;
+    {class} property ISO8859_13: JCharacterSetECI read _GetISO8859_13;
+    {class} property ISO8859_14: JCharacterSetECI read _GetISO8859_14;
+    {class} property ISO8859_15: JCharacterSetECI read _GetISO8859_15;
+    {class} property ISO8859_16: JCharacterSetECI read _GetISO8859_16;
+    {class} property ISO8859_2: JCharacterSetECI read _GetISO8859_2;
+    {class} property ISO8859_3: JCharacterSetECI read _GetISO8859_3;
+    {class} property ISO8859_4: JCharacterSetECI read _GetISO8859_4;
+    {class} property ISO8859_5: JCharacterSetECI read _GetISO8859_5;
+    {class} property ISO8859_6: JCharacterSetECI read _GetISO8859_6;
+    {class} property ISO8859_7: JCharacterSetECI read _GetISO8859_7;
+    {class} property ISO8859_8: JCharacterSetECI read _GetISO8859_8;
+    {class} property ISO8859_9: JCharacterSetECI read _GetISO8859_9;
+    {class} property SJIS: JCharacterSetECI read _GetSJIS;
+    {class} property UTF8: JCharacterSetECI read _GetUTF8;
+    {class} property UnicodeBigUnmarked: JCharacterSetECI read _GetUnicodeBigUnmarked;
+  end;
+
+  [JavaSignature('com/google/zxing/common/CharacterSetECI')]
+  JCharacterSetECI = interface(JEnum)
+    ['{89C987BC-4A23-47D2-A8C3-E82C2D6D84F0}']
+    function getCharset: JCharset; cdecl;
+    function getValue: Integer; cdecl;
+  end;
+  TJCharacterSetECI = class(TJavaGenericImport<JCharacterSetECIClass, JCharacterSetECI>) end;
+
+  JDetectorResultClass = interface(JObjectClass)
+    ['{F09B987C-A645-4F84-BFA7-062F4162328C}']
+    {class} function init(bitMatrix: JBitMatrix; resultPoints: TJavaObjectArray<JResultPoint>): JDetectorResult; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/DetectorResult')]
+  JDetectorResult = interface(JObject)
+    ['{8088A580-CD96-47C5-9B04-AE84CEABA213}']
+    function getBits: JBitMatrix; cdecl;
+    function getPoints: TJavaObjectArray<JResultPoint>; cdecl;
+  end;
+  TJDetectorResult = class(TJavaGenericImport<JDetectorResultClass, JDetectorResult>) end;
+
+  JECIStringBuilderClass = interface(JObjectClass)
+    ['{30374F3A-C55B-4AF6-A26F-5DA70C6D9602}']
+    {class} function init(int: Integer): JECIStringBuilder; overload; cdecl;
+    {class} function init: JECIStringBuilder; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/ECIStringBuilder')]
+  JECIStringBuilder = interface(JObject)
+    ['{94D442F2-94B0-4035-AB56-CC97DC47E8E9}']
+    procedure append(byte: Byte); overload; cdecl;
+    procedure append(string_1: JString); overload; cdecl;
+    procedure append(int: Integer); overload; cdecl;
+    procedure append(char: Char); overload; cdecl;
+    procedure appendCharacters(stringBuilder: JStringBuilder); cdecl;
+    procedure appendECI(int: Integer); cdecl;
+    function isEmpty: Boolean; cdecl;
+    function length: Integer; cdecl;
+    function toString: JString; cdecl;
+  end;
+  TJECIStringBuilder = class(TJavaGenericImport<JECIStringBuilderClass, JECIStringBuilder>) end;
+
+  JStringUtilsClass = interface(JObjectClass)
+    ['{000569C0-6BDB-497A-8FAA-9BBA398D951C}']
+    {class} function _GetGB2312: JString; cdecl;
+    {class} function _GetGB2312_CHARSET: JCharset; cdecl;
+    {class} function _GetSHIFT_JIS: JString; cdecl;
+    {class} function _GetSHIFT_JIS_CHARSET: JCharset; cdecl;
+    {class} function guessCharset(bytes: TJavaArray<Byte>; map: JMap): JCharset; cdecl;
+    {class} function guessEncoding(bytes: TJavaArray<Byte>; map: JMap): JString; cdecl;
+    {class} property GB2312: JString read _GetGB2312;
+    {class} property GB2312_CHARSET: JCharset read _GetGB2312_CHARSET;
+    {class} property SHIFT_JIS: JString read _GetSHIFT_JIS;
+    {class} property SHIFT_JIS_CHARSET: JCharset read _GetSHIFT_JIS_CHARSET;
+  end;
+
+  [JavaSignature('com/google/zxing/common/StringUtils')]
+  JStringUtils = interface(JObject)
+    ['{E5325733-9592-4B23-8C19-820CB6CA808A}']
+  end;
+  TJStringUtils = class(TJavaGenericImport<JStringUtilsClass, JStringUtils>) end;
+
+  JMinimalECIInputClass = interface(JObjectClass)
+    ['{88571C2C-F45D-4DAC-B1A5-1A848F1C0005}']
+    {class} function init(string_1: JString; charset: JCharset; int: Integer): JMinimalECIInput; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/MinimalECIInput')]
+  JMinimalECIInput = interface(JObject)
+    ['{DC7D86F7-AC60-4DDE-A0EA-F64E9B24EB24}']
+    function charAt(int: Integer): Char; cdecl;
+    function getECIValue(int: Integer): Integer; cdecl;
+    function getFNC1Character: Integer; cdecl;
+    function haveNCharacters(int: Integer; int_1: Integer): Boolean; cdecl;
+    function isECI(int: Integer): Boolean; cdecl;
+    function isFNC1(int: Integer): Boolean; cdecl;
+    function length: Integer; cdecl;
+    function subSequence(int: Integer; int_1: Integer): JCharSequence; cdecl;
+    function toString: JString; cdecl;
+  end;
+  TJMinimalECIInput = class(TJavaGenericImport<JMinimalECIInputClass, JMinimalECIInput>) end;
+
+  JBitMatrixClass = interface(JObjectClass)
+    ['{F393CAF8-9965-4E3A-9E5F-A5DE462CD727}']
+    {class} function init(int: Integer; int_1: Integer): JBitMatrix; overload; cdecl;
+    {class} function init(int: Integer): JBitMatrix; overload; cdecl;
+    {class} function parse(booleanss: TJavaArray<Boolean>): JBitMatrix; overload; cdecl;
+    {class} function parse(string_1: JString; string_2: JString; string_3: JString): JBitMatrix; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/BitMatrix')]
+  JBitMatrix = interface(JObject)
+    ['{B26C57CC-F5E7-4C97-B6DB-11B8D0D7D56A}']
+    procedure clear; cdecl;
+    function clone: JObject; overload; cdecl;
+    function clone: JBitMatrix; overload; cdecl;
+    function equals(object_1: JObject): Boolean; cdecl;
+    procedure flip(int: Integer; int_1: Integer); overload; cdecl;
+    procedure flip; overload; cdecl;
+    function get(int: Integer; int_1: Integer): Boolean; cdecl;
+    function getBottomRightOnBit: TJavaArray<Integer>; cdecl;
+    function getEnclosingRectangle: TJavaArray<Integer>; cdecl;
+    function getHeight: Integer; cdecl;
+    function getRow(int: Integer; bitArray: JBitArray): JBitArray; cdecl;
+    function getRowSize: Integer; cdecl;
+    function getTopLeftOnBit: TJavaArray<Integer>; cdecl;
+    function getWidth: Integer; cdecl;
+    function hashCode: Integer; cdecl;
+    procedure rotate(int: Integer); cdecl;
+    procedure rotate180; cdecl;
+    procedure rotate90; cdecl;
+    procedure &set(int: Integer; int_1: Integer); cdecl;
+    procedure setRegion(int: Integer; int_1: Integer; int_2: Integer; int_3: Integer); cdecl;
+    procedure setRow(int: Integer; bitArray: JBitArray); cdecl;
+    function toString(string_1: JString; string_2: JString; string_3: JString): JString; overload; cdecl;
+    function toString(string_1: JString; string_2: JString): JString; overload; cdecl;
+    function toString: JString; overload; cdecl;
+    procedure unset(int: Integer; int_1: Integer); cdecl;
+    procedure &xor(bitMatrix: JBitMatrix); cdecl;
+  end;
+  TJBitMatrix = class(TJavaGenericImport<JBitMatrixClass, JBitMatrix>) end;
+
+  JPerspectiveTransformClass = interface(JObjectClass)
+    ['{9FDD4145-3B91-4D7B-9F68-F3241572C2E8}']
+    {class} function quadrilateralToQuadrilateral(float: Single; float_1: Single; float_2: Single; float_3: Single; float_4: Single; float_5: Single; float_6: Single; float_7: Single; float_8: Single; float_9: Single; float_10: Single; float_11: Single; float_12: Single; float_13: Single; float_14: Single; float_15: Single): JPerspectiveTransform; cdecl;
+    {class} function quadrilateralToSquare(float: Single; float_1: Single; float_2: Single; float_3: Single; float_4: Single; float_5: Single; float_6: Single; float_7: Single): JPerspectiveTransform; cdecl;
+    {class} function squareToQuadrilateral(float: Single; float_1: Single; float_2: Single; float_3: Single; float_4: Single; float_5: Single; float_6: Single; float_7: Single): JPerspectiveTransform; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/PerspectiveTransform')]
+  JPerspectiveTransform = interface(JObject)
+    ['{3E18E394-CF1B-44A8-90CC-EC65AD2A5AE9}']
+    procedure transformPoints(floats: TJavaArray<Single>; floats_1: TJavaArray<Single>); overload; cdecl;
+    procedure transformPoints(floats: TJavaArray<Single>); overload; cdecl;
+  end;
+  TJPerspectiveTransform = class(TJavaGenericImport<JPerspectiveTransformClass, JPerspectiveTransform>) end;
+
+  JDecoderResultClass = interface(JObjectClass)
+    ['{42F477AF-89FA-463C-9BC6-5006BA236522}']
+    {class} function init(bytes: TJavaArray<Byte>; string_1: JString; list: JList; string_2: JString; int: Integer; int_1: Integer): JDecoderResult; overload; cdecl;
+    {class} function init(bytes: TJavaArray<Byte>; string_1: JString; list: JList; string_2: JString; int: Integer): JDecoderResult; overload; cdecl;
+    {class} function init(bytes: TJavaArray<Byte>; string_1: JString; list: JList; string_2: JString): JDecoderResult; overload; cdecl;
+    {class} function init(bytes: TJavaArray<Byte>; string_1: JString; list: JList; string_2: JString; int: Integer; int_1: Integer; int_2: Integer): JDecoderResult; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/DecoderResult')]
+  JDecoderResult = interface(JObject)
+    ['{113C2D4A-57DA-4731-BDD0-EA5ADED184B1}']
+    function getByteSegments: JList; cdecl;
+    function getECLevel: JString; cdecl;
+    function getErasures: JInteger; cdecl;
+    function getErrorsCorrected: JInteger; cdecl;
+    function getNumBits: Integer; cdecl;
+    function getOther: JObject; cdecl;
+    function getRawBytes: TJavaArray<Byte>; cdecl;
+    function getStructuredAppendParity: Integer; cdecl;
+    function getStructuredAppendSequenceNumber: Integer; cdecl;
+    function getSymbologyModifier: Integer; cdecl;
+    function getText: JString; cdecl;
+    function hasStructuredAppend: Boolean; cdecl;
+    procedure setErasures(integer: JInteger); cdecl;
+    procedure setErrorsCorrected(integer: JInteger); cdecl;
+    procedure setNumBits(int: Integer); cdecl;
+    procedure setOther(object_1: JObject); cdecl;
+  end;
+  TJDecoderResult = class(TJavaGenericImport<JDecoderResultClass, JDecoderResult>) end;
+
+  JECIEncoderSetClass = interface(JObjectClass)
+    ['{875399BF-2AE0-4AEE-BA37-220CCC44B5D5}']
+    {class} function init(string_1: JString; charset: JCharset; int: Integer): JECIEncoderSet; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/ECIEncoderSet')]
+  JECIEncoderSet = interface(JObject)
+    ['{6E8E5F29-EC82-47C6-8F08-D05AE624452B}']
+    function canEncode(char: Char; int_1: Integer): Boolean; cdecl;
+    function encode(char: Char; int_1: Integer): TJavaArray<Byte>; overload; cdecl;
+    function encode(string_1: JString; int: Integer): TJavaArray<Byte>; overload; cdecl;
+    function getCharset(int: Integer): JCharset; cdecl;
+    function getCharsetName(int: Integer): JString; cdecl;
+    function getECIValue(int: Integer): Integer; cdecl;
+    function getPriorityEncoderIndex: Integer; cdecl;
+    function length: Integer; cdecl;
+  end;
+  TJECIEncoderSet = class(TJavaGenericImport<JECIEncoderSetClass, JECIEncoderSet>) end;
+
+  JReedSolomonDecoderClass = interface(JObjectClass)
+    ['{8E2E8311-391B-4616-B533-F39FAA8C6BD2}']
+    {class} function init(genericGF: JGenericGF): JReedSolomonDecoder; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/reedsolomon/ReedSolomonDecoder')]
+  JReedSolomonDecoder = interface(JObject)
+    ['{ED122940-2014-49AD-A6A1-1B1F70726F6F}']
+    procedure decode(ints: TJavaArray<Integer>; int: Integer); cdecl;
+    function decodeWithECCount(ints: TJavaArray<Integer>; int: Integer): Integer; cdecl;
+  end;
+  TJReedSolomonDecoder = class(TJavaGenericImport<JReedSolomonDecoderClass, JReedSolomonDecoder>) end;
+
+  JGenericGFClass = interface(JObjectClass)
+    ['{71835556-3536-4087-A485-DF3D99529A4C}']
+    {class} function _GetAZTEC_DATA_10: JGenericGF; cdecl;
+    {class} function _GetAZTEC_DATA_12: JGenericGF; cdecl;
+    {class} function _GetAZTEC_DATA_6: JGenericGF; cdecl;
+    {class} function _GetAZTEC_DATA_8: JGenericGF; cdecl;
+    {class} function _GetAZTEC_PARAM: JGenericGF; cdecl;
+    {class} function _GetDATA_MATRIX_FIELD_256: JGenericGF; cdecl;
+    {class} function _GetMAXICODE_FIELD_64: JGenericGF; cdecl;
+    {class} function _GetQR_CODE_FIELD_256: JGenericGF; cdecl;
+    {class} function init(int: Integer; int_1: Integer; int_2: Integer): JGenericGF; cdecl;
+    {class} property AZTEC_DATA_10: JGenericGF read _GetAZTEC_DATA_10;
+    {class} property AZTEC_DATA_12: JGenericGF read _GetAZTEC_DATA_12;
+    {class} property AZTEC_DATA_6: JGenericGF read _GetAZTEC_DATA_6;
+    {class} property AZTEC_DATA_8: JGenericGF read _GetAZTEC_DATA_8;
+    {class} property AZTEC_PARAM: JGenericGF read _GetAZTEC_PARAM;
+    {class} property DATA_MATRIX_FIELD_256: JGenericGF read _GetDATA_MATRIX_FIELD_256;
+    {class} property MAXICODE_FIELD_64: JGenericGF read _GetMAXICODE_FIELD_64;
+    {class} property QR_CODE_FIELD_256: JGenericGF read _GetQR_CODE_FIELD_256;
+  end;
+
+  [JavaSignature('com/google/zxing/common/reedsolomon/GenericGF')]
+  JGenericGF = interface(JObject)
+    ['{3B76239F-EE2D-4394-A68B-48E2BAC61CB5}']
+    function getGeneratorBase: Integer; cdecl;
+    function getSize: Integer; cdecl;
+    function toString: JString; cdecl;
+  end;
+  TJGenericGF = class(TJavaGenericImport<JGenericGFClass, JGenericGF>) end;
+
+  JReedSolomonEncoderClass = interface(JObjectClass)
+    ['{46D95941-D9BE-4213-A5EB-7517DEFB68FA}']
+    {class} function init(genericGF: JGenericGF): JReedSolomonEncoder; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/reedsolomon/ReedSolomonEncoder')]
+  JReedSolomonEncoder = interface(JObject)
+    ['{D87A8009-8FD4-49E4-9752-A44E602BB4C7}']
+    procedure encode(ints: TJavaArray<Integer>; int: Integer); cdecl;
+  end;
+  TJReedSolomonEncoder = class(TJavaGenericImport<JReedSolomonEncoderClass, JReedSolomonEncoder>) end;
+
+  JReedSolomonExceptionClass = interface(JExceptionClass)
+    ['{1C72723C-AB3F-4C37-8A71-E5878C090100}']
+    {class} function init(string_1: JString): JReedSolomonException; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/reedsolomon/ReedSolomonException')]
+  JReedSolomonException = interface(JException)
+    ['{C4728B62-F732-4E24-84EB-9B08937A67AF}']
+  end;
+  TJReedSolomonException = class(TJavaGenericImport<JReedSolomonExceptionClass, JReedSolomonException>) end;
+
+  JDimensionClass = interface(JObjectClass)
+    ['{DF6DE2FB-5EBB-40BC-81AC-2D16A3D97A73}']
+    {class} function init(int: Integer; int_1: Integer): JDimension; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/Dimension')]
+  JDimension = interface(JObject)
+    ['{832D5D21-B321-448F-B66B-8130CE9E4039}']
+    function equals(object_1: JObject): Boolean; cdecl;
+    function getHeight: Integer; cdecl;
+    function getWidth: Integer; cdecl;
+    function hashCode: Integer; cdecl;
+    function toString: JString; cdecl;
+  end;
+  TJDimension = class(TJavaGenericImport<JDimensionClass, JDimension>) end;
+
+  JWriterExceptionClass = interface(JExceptionClass)
+    ['{EB9336F4-6C69-45F5-AB33-04338A565547}']
+    {class} function init(throwable: JThrowable): JWriterException; overload; cdecl;
+    {class} function init(string_1: JString): JWriterException; overload; cdecl;
+    {class} function init: JWriterException; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/WriterException')]
+  JWriterException = interface(JException)
+    ['{812334A9-F8E6-4BE7-94F7-18740E19D39F}']
+  end;
+  TJWriterException = class(TJavaGenericImport<JWriterExceptionClass, JWriterException>) end;
+
+  JMultiFormatReaderClass = interface(JObjectClass)
+    ['{515153F1-4766-4A70-9028-F66F907A93DA}']
+    {class} function init: JMultiFormatReader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/MultiFormatReader')]
+  JMultiFormatReader = interface(JObject)
+    ['{A751FE2F-0F98-4318-9BB7-E5E353BD2B89}']
+    function decode(binaryBitmap: JBinaryBitmap; map: JMap): JResult; overload; cdecl;
+    function decode(binaryBitmap: JBinaryBitmap): JResult; overload; cdecl;
+    function decodeWithState(binaryBitmap: JBinaryBitmap): JResult; cdecl;
+    procedure reset; cdecl;
+    procedure setHints(map: JMap); cdecl;
+  end;
+  TJMultiFormatReader = class(TJavaGenericImport<JMultiFormatReaderClass, JMultiFormatReader>) end;
+
+  JBinarizerClass = interface(JObjectClass)
+    ['{6ECC04E4-1B7A-4E27-B072-DFAC5C707685}']
+  end;
+
+  [JavaSignature('com/google/zxing/Binarizer')]
+  JBinarizer = interface(JObject)
+    ['{F2371D14-6CB5-48CF-A2CE-8FA3B4848502}']
+    function createBinarizer(luminanceSource: JLuminanceSource): JBinarizer; cdecl;
+    function getBlackMatrix: JBitMatrix; cdecl;
+    function getBlackRow(int: Integer; bitArray: JBitArray): JBitArray; cdecl;
+    function getHeight: Integer; cdecl;
+    function getLuminanceSource: JLuminanceSource; cdecl;
+    function getWidth: Integer; cdecl;
+  end;
+  TJBinarizer = class(TJavaGenericImport<JBinarizerClass, JBinarizer>) end;
+
+  JAztecDetectorResultClass = interface(JDetectorResultClass)
+    ['{A54D60E4-21A3-4D1E-B196-D1898FCAADA7}']
+    {class} function init(bitMatrix: JBitMatrix; resultPoints: TJavaObjectArray<JResultPoint>; boolean: Boolean; int_1: Integer; int: Integer; int_2: Integer): JAztecDetectorResult; overload; cdecl;
+    {class} function init(bitMatrix: JBitMatrix; resultPoints: TJavaObjectArray<JResultPoint>; boolean: Boolean; int_1: Integer; int: Integer): JAztecDetectorResult; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/aztec/AztecDetectorResult')]
+  JAztecDetectorResult = interface(JDetectorResult)
+    ['{A9DFE871-9BE0-4CA8-ABDC-9E601A75F857}']
+    function getErrorsCorrected: Integer; cdecl;
+    function getNbDatablocks: Integer; cdecl;
+    function getNbLayers: Integer; cdecl;
+    function isCompact: Boolean; cdecl;
+  end;
+  TJAztecDetectorResult = class(TJavaGenericImport<JAztecDetectorResultClass, JAztecDetectorResult>) end;
+
+  Jaztec_detector_DetectorClass = interface(JObjectClass)
+    ['{66A1FFB4-7C88-4007-B9CC-7B3EED0AD501}']
+    {class} function init(bitMatrix: JBitMatrix): Jaztec_detector_Detector; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/aztec/detector/Detector')]
+  Jaztec_detector_Detector = interface(JObject)
+    ['{AF8B2AF6-91ED-4574-8363-FD4AE1476B85}']
+    function detect(boolean: Boolean): JAztecDetectorResult; overload; cdecl;
+    function detect: JAztecDetectorResult; overload; cdecl;
+  end;
+  TJaztec_detector_Detector = class(TJavaGenericImport<Jaztec_detector_DetectorClass, Jaztec_detector_Detector>) end;
+
+  JAztecWriterClass = interface(JObjectClass)
+    ['{8CB811A2-A7AD-4285-9799-541D38B7A466}']
+    {class} function init: JAztecWriter; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/aztec/AztecWriter')]
+  JAztecWriter = interface(JObject)
+    ['{F4CB6954-3200-4B6D-B9ED-060185E60E25}']
+    function encode(string_1: JString; barcodeFormat: JBarcodeFormat; int: Integer; int_1: Integer; map: JMap): JBitMatrix; overload; cdecl;
+    function encode(string_1: JString; barcodeFormat: JBarcodeFormat; int: Integer; int_1: Integer): JBitMatrix; overload; cdecl;
+  end;
+  TJAztecWriter = class(TJavaGenericImport<JAztecWriterClass, JAztecWriter>) end;
+
+  JAztecReaderClass = interface(JObjectClass)
+    ['{D2A4239E-6446-493A-BEC3-982E516B2356}']
+    {class} function init: JAztecReader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/aztec/AztecReader')]
+  JAztecReader = interface(JObject)
+    ['{7D79DCAA-7D3B-4643-BB38-829D253D7BB8}']
+    function decode(binaryBitmap: JBinaryBitmap; map: JMap): JResult; overload; cdecl;
+    function decode(binaryBitmap: JBinaryBitmap): JResult; overload; cdecl;
+    procedure reset; cdecl;
+  end;
+  TJAztecReader = class(TJavaGenericImport<JAztecReaderClass, JAztecReader>) end;
+
+  JEncoderClass = interface(JObjectClass)
+    ['{CFEEF62F-F0F9-4BD1-93BA-91EFF3207DD4}']
+    {class} function _GetDEFAULT_AZTEC_LAYERS: Integer; cdecl;
+    {class} function _GetDEFAULT_EC_PERCENT: Integer; cdecl;
+    {class} function encode(bytes: TJavaArray<Byte>): JAztecCode; overload; cdecl;
+    {class} function encode(bytes: TJavaArray<Byte>; int: Integer; int_1: Integer): JAztecCode; overload; cdecl;
+    {class} function encode(bytes: TJavaArray<Byte>; int: Integer; int_1: Integer; charset: JCharset): JAztecCode; overload; cdecl;
+    {class} function encode(string_1: JString): JAztecCode; overload; cdecl;
+    {class} function encode(string_1: JString; int: Integer; int_1: Integer): JAztecCode; overload; cdecl;
+    {class} function encode(string_1: JString; int: Integer; int_1: Integer; charset: JCharset): JAztecCode; overload; cdecl;
+    {class} property DEFAULT_AZTEC_LAYERS: Integer read _GetDEFAULT_AZTEC_LAYERS;
+    {class} property DEFAULT_EC_PERCENT: Integer read _GetDEFAULT_EC_PERCENT;
+  end;
+
+  [JavaSignature('com/google/zxing/aztec/encoder/Encoder')]
+  JEncoder = interface(JObject)
+    ['{7B81CCCF-81DE-448D-9332-8148B9D54BC5}']
+  end;
+  TJEncoder = class(TJavaGenericImport<JEncoderClass, JEncoder>) end;
+
+  Jencoder_HighLevelEncoderClass = interface(JObjectClass)
+    ['{962ADBA9-2390-49D2-B753-5FD365E4D755}']
+    {class} function init(bytes: TJavaArray<Byte>; charset: JCharset): Jencoder_HighLevelEncoder; overload; cdecl;
+    {class} function init(bytes: TJavaArray<Byte>): Jencoder_HighLevelEncoder; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/aztec/encoder/HighLevelEncoder')]
+  Jencoder_HighLevelEncoder = interface(JObject)
+    ['{AE4F8B7F-E58B-44AD-9B17-0AB7EF1B9EAF}']
+    function encode: JBitArray; cdecl;
+  end;
+  TJencoder_HighLevelEncoder = class(TJavaGenericImport<Jencoder_HighLevelEncoderClass, Jencoder_HighLevelEncoder>) end;
+
+  JTokenClass = interface(JObjectClass)
+    ['{325D9306-DE5B-416C-AF6E-D3FC29FB4FEA}']
+  end;
+
+  [JavaSignature('com/google/zxing/aztec/encoder/Token')]
+  JToken = interface(JObject)
+    ['{E8AD426F-82BE-48BE-AB26-99C2C2D612FC}']
+  end;
+  TJToken = class(TJavaGenericImport<JTokenClass, JToken>) end;
+
+  JAztecCodeClass = interface(JObjectClass)
+    ['{A0E349EB-B68E-4CE2-B299-2993E4D7EF0D}']
+    {class} function init: JAztecCode; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/aztec/encoder/AztecCode')]
+  JAztecCode = interface(JObject)
+    ['{8E540F32-68DC-4F4A-AFDD-298470517643}']
+    function getCodeWords: Integer; cdecl;
+    function getLayers: Integer; cdecl;
+    function getMatrix: JBitMatrix; cdecl;
+    function getSize: Integer; cdecl;
+    function isCompact: Boolean; cdecl;
+    procedure setCodeWords(int: Integer); cdecl;
+    procedure setCompact(boolean: Boolean); cdecl;
+    procedure setLayers(int: Integer); cdecl;
+    procedure setMatrix(bitMatrix: JBitMatrix); cdecl;
+    procedure setSize(int: Integer); cdecl;
+  end;
+  TJAztecCode = class(TJavaGenericImport<JAztecCodeClass, JAztecCode>) end;
+
+  Jaztec_decoder_DecoderClass = interface(JObjectClass)
+    ['{5BAD41EE-02F5-4E3B-9528-876CA5229AC8}']
+    {class} function highLevelDecode(booleans: TJavaArray<Boolean>): JString; cdecl;
+    {class} function init: Jaztec_decoder_Decoder; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/aztec/decoder/Decoder')]
+  Jaztec_decoder_Decoder = interface(JObject)
+    ['{B6BFAC21-94D4-4869-BB20-B5FCA77029D3}']
+    function decode(aztecDetectorResult: JAztecDetectorResult): JDecoderResult; cdecl;
+  end;
+  TJaztec_decoder_Decoder = class(TJavaGenericImport<Jaztec_decoder_DecoderClass, Jaztec_decoder_Decoder>) end;
+
+  JReaderClass = interface(IJavaClass)
+    ['{C1C17FFE-FA02-4984-B7EE-E072072A73F6}']
+  end;
+
+  [JavaSignature('com/google/zxing/Reader')]
+  JReader = interface(IJavaInstance)
+    ['{42A06AA5-BDBA-49D9-8603-5B25A3C9A0A5}']
+    function decode(binaryBitmap: JBinaryBitmap; map: JMap): JResult; overload; cdecl;
+    function decode(binaryBitmap: JBinaryBitmap): JResult; overload; cdecl;
+    procedure reset; cdecl;
+  end;
+  TJReader = class(TJavaGenericImport<JReaderClass, JReader>) end;
+
+  JParsedResultClass = interface(JObjectClass)
+    ['{50329CB9-A6C2-466F-BB08-517F7252302B}']
+    {class} procedure maybeAppend(string_1: JString; stringBuilder: JStringBuilder); overload; cdecl;
+    {class} procedure maybeAppend(strings: TJavaObjectArray<JString>; stringBuilder: JStringBuilder); overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/ParsedResult')]
+  JParsedResult = interface(JObject)
+    ['{A1AB997A-60D0-4E60-94AA-D4378B03C0B2}']
+    function getDisplayResult: JString; cdecl;
+    function getType: JParsedResultType; cdecl;
+    function toString: JString; cdecl;
+  end;
+  TJParsedResult = class(TJavaGenericImport<JParsedResultClass, JParsedResult>) end;
+
+  JParsedResultTypeClass = interface(JEnumClass)
+    ['{30C7CA57-C3D5-43AC-AABE-F4BF1C028F80}']
+    {class} function _GetADDRESSBOOK: JParsedResultType; cdecl;
+    {class} function _GetCALENDAR: JParsedResultType; cdecl;
+    {class} function _GetEMAIL_ADDRESS: JParsedResultType; cdecl;
+    {class} function _GetGEO: JParsedResultType; cdecl;
+    {class} function _GetISBN: JParsedResultType; cdecl;
+    {class} function _GetPRODUCT: JParsedResultType; cdecl;
+    {class} function _GetSMS: JParsedResultType; cdecl;
+    {class} function _GetTEL: JParsedResultType; cdecl;
+    {class} function _GetTEXT: JParsedResultType; cdecl;
+    {class} function _GetURI: JParsedResultType; cdecl;
+    {class} function _GetVIN: JParsedResultType; cdecl;
+    {class} function _GetWIFI: JParsedResultType; cdecl;
+    {class} function valueOf(string_1: JString): JParsedResultType; cdecl;
+    {class} function values: TJavaObjectArray<JParsedResultType>; cdecl;
+    {class} property ADDRESSBOOK: JParsedResultType read _GetADDRESSBOOK;
+    {class} property CALENDAR: JParsedResultType read _GetCALENDAR;
+    {class} property EMAIL_ADDRESS: JParsedResultType read _GetEMAIL_ADDRESS;
+    {class} property GEO: JParsedResultType read _GetGEO;
+    {class} property ISBN: JParsedResultType read _GetISBN;
+    {class} property PRODUCT: JParsedResultType read _GetPRODUCT;
+    {class} property SMS: JParsedResultType read _GetSMS;
+    {class} property TEL: JParsedResultType read _GetTEL;
+    {class} property TEXT: JParsedResultType read _GetTEXT;
+    {class} property URI: JParsedResultType read _GetURI;
+    {class} property VIN: JParsedResultType read _GetVIN;
+    {class} property WIFI: JParsedResultType read _GetWIFI;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/ParsedResultType')]
+  JParsedResultType = interface(JEnum)
+    ['{39D62627-383A-4447-8408-B7E0F5094192}']
+  end;
+  TJParsedResultType = class(TJavaGenericImport<JParsedResultTypeClass, JParsedResultType>) end;
+
+  JWifiParsedResultClass = interface(JParsedResultClass)
+    ['{6DB26C4E-C578-4490-8293-CAFBCB4DB5EA}']
+    {class} function init(string_1: JString; string_2: JString; string_3: JString): JWifiParsedResult; overload; cdecl;
+    {class} function init(string_1: JString; string_2: JString; string_3: JString; boolean: Boolean): JWifiParsedResult; overload; cdecl;
+    {class} function init(string_1: JString; string_2: JString; string_3: JString; boolean: Boolean; string_4: JString; string_5: JString; string_6: JString; string_7: JString): JWifiParsedResult; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/WifiParsedResult')]
+  JWifiParsedResult = interface(JParsedResult)
+    ['{55C64E7E-A14F-4D4A-9338-4A4557D22014}']
+    function getAnonymousIdentity: JString; cdecl;
+    function getDisplayResult: JString; cdecl;
+    function getEapMethod: JString; cdecl;
+    function getIdentity: JString; cdecl;
+    function getNetworkEncryption: JString; cdecl;
+    function getPassword: JString; cdecl;
+    function getPhase2Method: JString; cdecl;
+    function getSsid: JString; cdecl;
+    function isHidden: Boolean; cdecl;
+  end;
+  TJWifiParsedResult = class(TJavaGenericImport<JWifiParsedResultClass, JWifiParsedResult>) end;
+
+  JExpandedProductParsedResultClass = interface(JParsedResultClass)
+    ['{DDD7BAA7-B8A2-4EB8-94B5-DF11FC622062}']
+    {class} function _GetKILOGRAM: JString; cdecl;
+    {class} function _GetPOUND: JString; cdecl;
+    {class} function init(string_1: JString; string_2: JString; string_3: JString; string_4: JString; string_5: JString; string_6: JString; string_7: JString; string_8: JString; string_9: JString; string_10: JString; string_11: JString; string_12: JString; string_13: JString; string_14: JString; map: JMap): JExpandedProductParsedResult; cdecl;
+    {class} property KILOGRAM: JString read _GetKILOGRAM;
+    {class} property POUND: JString read _GetPOUND;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/ExpandedProductParsedResult')]
+  JExpandedProductParsedResult = interface(JParsedResult)
+    ['{300E481C-9232-4C55-A1BD-97A1872A86EE}']
+    function equals(object_1: JObject): Boolean; cdecl;
+    function getBestBeforeDate: JString; cdecl;
+    function getDisplayResult: JString; cdecl;
+    function getExpirationDate: JString; cdecl;
+    function getLotNumber: JString; cdecl;
+    function getPackagingDate: JString; cdecl;
+    function getPrice: JString; cdecl;
+    function getPriceCurrency: JString; cdecl;
+    function getPriceIncrement: JString; cdecl;
+    function getProductID: JString; cdecl;
+    function getProductionDate: JString; cdecl;
+    function getRawText: JString; cdecl;
+    function getSscc: JString; cdecl;
+    function getUncommonAIs: JMap; cdecl;
+    function getWeight: JString; cdecl;
+    function getWeightIncrement: JString; cdecl;
+    function getWeightType: JString; cdecl;
+    function hashCode: Integer; cdecl;
+  end;
+  TJExpandedProductParsedResult = class(TJavaGenericImport<JExpandedProductParsedResultClass, JExpandedProductParsedResult>) end;
+
+  JTextParsedResultClass = interface(JParsedResultClass)
+    ['{43D8425A-6A5A-4836-BDE1-99FF481CE86B}']
+    {class} function init(string_1: JString; string_2: JString): JTextParsedResult; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/TextParsedResult')]
+  JTextParsedResult = interface(JParsedResult)
+    ['{56225CC6-32AC-42B7-BEFB-8CB038EDDD92}']
+    function getDisplayResult: JString; cdecl;
+    function getLanguage: JString; cdecl;
+    function getText: JString; cdecl;
+  end;
+  TJTextParsedResult = class(TJavaGenericImport<JTextParsedResultClass, JTextParsedResult>) end;
+
+  JSMSParsedResultClass = interface(JParsedResultClass)
+    ['{7B30B744-9086-4CD9-8416-D729E1DE864B}']
+    {class} function init(string_1: JString; string_2: JString; string_3: JString; string_4: JString): JSMSParsedResult; overload; cdecl;
+    {class} function init(strings: TJavaObjectArray<JString>; strings_1: TJavaObjectArray<JString>; string_1: JString; string_2: JString): JSMSParsedResult; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/SMSParsedResult')]
+  JSMSParsedResult = interface(JParsedResult)
+    ['{893F84D9-55F5-4BB1-9A3F-12E4F6347184}']
+    function getBody: JString; cdecl;
+    function getDisplayResult: JString; cdecl;
+    function getNumbers: TJavaObjectArray<JString>; cdecl;
+    function getSMSURI: JString; cdecl;
+    function getSubject: JString; cdecl;
+    function getVias: TJavaObjectArray<JString>; cdecl;
+  end;
+  TJSMSParsedResult = class(TJavaGenericImport<JSMSParsedResultClass, JSMSParsedResult>) end;
+
+  JURIParsedResultClass = interface(JParsedResultClass)
+    ['{BB979F88-B9DB-4ACE-ABCC-F00135BAD49D}']
+    {class} function init(string_1: JString; string_2: JString): JURIParsedResult; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/URIParsedResult')]
+  JURIParsedResult = interface(JParsedResult)
+    ['{4A87D40C-AFBE-4F59-9DFE-42B97A7B37AA}']
+    function getDisplayResult: JString; cdecl;
+    function getTitle: JString; cdecl;
+    function getURI: JString; cdecl;
+    function isPossiblyMaliciousURI: Boolean; cdecl;
+  end;
+  TJURIParsedResult = class(TJavaGenericImport<JURIParsedResultClass, JURIParsedResult>) end;
+
+  JVINParsedResultClass = interface(JParsedResultClass)
+    ['{2A4256F0-1FBD-4C9C-B077-56C3CD0382B9}']
+    {class} function init(string_1: JString; string_2: JString; string_3: JString; string_4: JString; string_5: JString; string_6: JString; int: Integer; char: Char; string_7: JString): JVINParsedResult; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/VINParsedResult')]
+  JVINParsedResult = interface(JParsedResult)
+    ['{E5C017F4-5513-49F5-9D0A-4D52ECC18FFA}']
+    function getCountryCode: JString; cdecl;
+    function getDisplayResult: JString; cdecl;
+    function getModelYear: Integer; cdecl;
+    function getPlantCode: Char; cdecl;
+    function getSequentialNumber: JString; cdecl;
+    function getVIN: JString; cdecl;
+    function getVehicleAttributes: JString; cdecl;
+    function getVehicleDescriptorSection: JString; cdecl;
+    function getVehicleIdentifierSection: JString; cdecl;
+    function getWorldManufacturerID: JString; cdecl;
+  end;
+  TJVINParsedResult = class(TJavaGenericImport<JVINParsedResultClass, JVINParsedResult>) end;
+
+  JResultParserClass = interface(JObjectClass)
+    ['{78A51F0F-DD57-4680-A659-646F1D445128}']
+    {class} function init: JResultParser; cdecl;
+    {class} function parseResult(result: JResult): JParsedResult; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/ResultParser')]
+  JResultParser = interface(JObject)
+    ['{7EAEC029-1E51-4B05-8CF5-DCE91758BA90}']
+    function parse(result: JResult): JParsedResult; cdecl;
+  end;
+  TJResultParser = class(TJavaGenericImport<JResultParserClass, JResultParser>) end;
+
+  JBinaryBitmapClass = interface(JObjectClass)
+    ['{8D8A1D5D-C700-484D-8A50-E4F459C81861}']
+    {class} function init(binarizer: JBinarizer): JBinaryBitmap; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/BinaryBitmap')]
+  JBinaryBitmap = interface(JObject)
+    ['{B2DBF580-A0DC-4B78-AE97-53637EB2E7BB}']
+    function crop(int: Integer; int_1: Integer; int_2: Integer; int_3: Integer): JBinaryBitmap; cdecl;
+    function getBlackMatrix: JBitMatrix; cdecl;
+    function getBlackRow(int: Integer; bitArray: JBitArray): JBitArray; cdecl;
+    function getHeight: Integer; cdecl;
+    function getWidth: Integer; cdecl;
+    function isCropSupported: Boolean; cdecl;
+    function isRotateSupported: Boolean; cdecl;
+    function rotateCounterClockwise: JBinaryBitmap; cdecl;
+    function rotateCounterClockwise45: JBinaryBitmap; cdecl;
+    function toString: JString; cdecl;
+  end;
+  TJBinaryBitmap = class(TJavaGenericImport<JBinaryBitmapClass, JBinaryBitmap>) end;
+
+  JWriterClass = interface(IJavaClass)
+    ['{51B6FCAB-1934-44A2-A2E0-526BC013364C}']
+  end;
+
+  [JavaSignature('com/google/zxing/Writer')]
+  JWriter = interface(IJavaInstance)
+    ['{2263B0A2-4F33-480A-8445-C04B25AE852E}']
+    function encode(string_1: JString; barcodeFormat: JBarcodeFormat; int: Integer; int_1: Integer): JBitMatrix; overload; cdecl;
+    function encode(string_1: JString; barcodeFormat: JBarcodeFormat; int: Integer; int_1: Integer; map: JMap): JBitMatrix; overload; cdecl;
+  end;
+  TJWriter = class(TJavaGenericImport<JWriterClass, JWriter>) end;
+
+  JBarcodeFormatClass = interface(JEnumClass)
+    ['{5A94A93E-5EDF-4B39-8C6F-94C610AB8152}']
+    {class} function _GetAZTEC: JBarcodeFormat; cdecl;
+    {class} function _GetCODABAR: JBarcodeFormat; cdecl;
+    {class} function _GetCODE_128: JBarcodeFormat; cdecl;
+    {class} function _GetCODE_39: JBarcodeFormat; cdecl;
+    {class} function _GetCODE_93: JBarcodeFormat; cdecl;
+    {class} function _GetDATA_MATRIX: JBarcodeFormat; cdecl;
+    {class} function _GetEAN_13: JBarcodeFormat; cdecl;
+    {class} function _GetEAN_8: JBarcodeFormat; cdecl;
+    {class} function _GetITF: JBarcodeFormat; cdecl;
+    {class} function _GetMAXICODE: JBarcodeFormat; cdecl;
+    {class} function _GetPDF_417: JBarcodeFormat; cdecl;
+    {class} function _GetQR_CODE: JBarcodeFormat; cdecl;
+    {class} function _GetRSS_14: JBarcodeFormat; cdecl;
+    {class} function _GetRSS_EXPANDED: JBarcodeFormat; cdecl;
+    {class} function _GetUPC_A: JBarcodeFormat; cdecl;
+    {class} function _GetUPC_E: JBarcodeFormat; cdecl;
+    {class} function _GetUPC_EAN_EXTENSION: JBarcodeFormat; cdecl;
+    {class} function valueOf(string_1: JString): JBarcodeFormat; cdecl;
+    {class} function values: TJavaObjectArray<JBarcodeFormat>; cdecl;
+    {class} property AZTEC: JBarcodeFormat read _GetAZTEC;
+    {class} property CODABAR: JBarcodeFormat read _GetCODABAR;
+    {class} property CODE_128: JBarcodeFormat read _GetCODE_128;
+    {class} property CODE_39: JBarcodeFormat read _GetCODE_39;
+    {class} property CODE_93: JBarcodeFormat read _GetCODE_93;
+    {class} property DATA_MATRIX: JBarcodeFormat read _GetDATA_MATRIX;
+    {class} property EAN_13: JBarcodeFormat read _GetEAN_13;
+    {class} property EAN_8: JBarcodeFormat read _GetEAN_8;
+    {class} property ITF: JBarcodeFormat read _GetITF;
+    {class} property MAXICODE: JBarcodeFormat read _GetMAXICODE;
+    {class} property PDF_417: JBarcodeFormat read _GetPDF_417;
+    {class} property QR_CODE: JBarcodeFormat read _GetQR_CODE;
+    {class} property RSS_14: JBarcodeFormat read _GetRSS_14;
+    {class} property RSS_EXPANDED: JBarcodeFormat read _GetRSS_EXPANDED;
+    {class} property UPC_A: JBarcodeFormat read _GetUPC_A;
+    {class} property UPC_E: JBarcodeFormat read _GetUPC_E;
+    {class} property UPC_EAN_EXTENSION: JBarcodeFormat read _GetUPC_EAN_EXTENSION;
+  end;
+
+  [JavaSignature('com/google/zxing/BarcodeFormat')]
+  JBarcodeFormat = interface(JEnum)
+    ['{2FEB62AF-D90B-428A-BABF-45855159C03E}']
+  end;
+  TJBarcodeFormat = class(TJavaGenericImport<JBarcodeFormatClass, JBarcodeFormat>) end;
+
+  JNotFoundExceptionClass = interface(JReaderExceptionClass)
+    ['{22B6A065-8C6E-42D8-BC44-31DD8A83C9C5}']
+    {class} function getNotFoundInstance: JNotFoundException; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/NotFoundException')]
+  JNotFoundException = interface(JReaderException)
+    ['{580C7C37-76C2-4CC0-B5BA-EB5626A9F0E4}']
+  end;
+  TJNotFoundException = class(TJavaGenericImport<JNotFoundExceptionClass, JNotFoundException>) end;
+
+  JResultPointCallbackClass = interface(IJavaClass)
+    ['{F2691354-CAEA-4C4A-9A13-7E04D397BCAE}']
+  end;
+
+  [JavaSignature('com/google/zxing/ResultPointCallback')]
+  JResultPointCallback = interface(IJavaInstance)
+    ['{625F73CF-88BA-4555-9931-D1A7FF556060}']
+    procedure foundPossibleResultPoint(resultPoint: JResultPoint); cdecl;
+  end;
+  TJResultPointCallback = class(TJavaGenericImport<JResultPointCallbackClass, JResultPointCallback>) end;
+
+  JLuminanceSourceClass = interface(JObjectClass)
+    ['{310E5CF5-0BF0-458A-8A3C-6E63615B11AE}']
+  end;
+
+  [JavaSignature('com/google/zxing/LuminanceSource')]
+  JLuminanceSource = interface(JObject)
+    ['{6E185322-E769-4EE7-ADCD-CCC81C8458E4}']
+    function crop(int: Integer; int_1: Integer; int_2: Integer; int_3: Integer): JLuminanceSource; cdecl;
+    function getHeight: Integer; cdecl;
+    function getMatrix: TJavaArray<Byte>; cdecl;
+    function getRow(int: Integer; bytes: TJavaArray<Byte>): TJavaArray<Byte>; cdecl;
+    function getWidth: Integer; cdecl;
+    function invert: JLuminanceSource; cdecl;
+    function isCropSupported: Boolean; cdecl;
+    function isRotateSupported: Boolean; cdecl;
+    function rotateCounterClockwise: JLuminanceSource; cdecl;
+    function rotateCounterClockwise45: JLuminanceSource; cdecl;
+    function toString: JString; cdecl;
+  end;
+  TJLuminanceSource = class(TJavaGenericImport<JLuminanceSourceClass, JLuminanceSource>) end;
+
+  JFormatExceptionClass = interface(JReaderExceptionClass)
+    ['{D8F378F7-D848-45DE-B8DA-B58F9F9E58E7}']
+    {class} function getFormatInstance: JFormatException; overload; cdecl;
+    {class} function getFormatInstance(throwable: JThrowable): JFormatException; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/FormatException')]
+  JFormatException = interface(JReaderException)
+    ['{11CBFD4C-85C5-4AC1-96D9-B246961EB0E6}']
+  end;
+  TJFormatException = class(TJavaGenericImport<JFormatExceptionClass, JFormatException>) end;
+
+  Jdatamatrix_detector_DetectorClass = interface(JObjectClass)
+    ['{7EC6EB36-A428-457D-87A7-D7109781439E}']
+    {class} function init(bitMatrix: JBitMatrix): Jdatamatrix_detector_Detector; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/datamatrix/detector/Detector')]
+  Jdatamatrix_detector_Detector = interface(JObject)
+    ['{C491B68A-104C-40BC-A64B-31D4F2C427BC}']
+    function detect: JDetectorResult; cdecl;
+  end;
+  TJdatamatrix_detector_Detector = class(TJavaGenericImport<Jdatamatrix_detector_DetectorClass, Jdatamatrix_detector_Detector>) end;
+
+  JDataMatrixReaderClass = interface(JObjectClass)
+    ['{6A5998E0-2207-4007-A8D4-635E16834183}']
+    {class} function init: JDataMatrixReader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/datamatrix/DataMatrixReader')]
+  JDataMatrixReader = interface(JObject)
+    ['{9AB844BB-A960-442D-BB24-5707FC3ACC4E}']
+    function decode(binaryBitmap: JBinaryBitmap; map: JMap): JResult; overload; cdecl;
+    function decode(binaryBitmap: JBinaryBitmap): JResult; overload; cdecl;
+    procedure reset; cdecl;
+  end;
+  TJDataMatrixReader = class(TJavaGenericImport<JDataMatrixReaderClass, JDataMatrixReader>) end;
+
+  JDataMatrixWriterClass = interface(JObjectClass)
+    ['{E49CAC6F-BD95-4A05-A0FF-1A83808370D9}']
+    {class} function init: JDataMatrixWriter; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/datamatrix/DataMatrixWriter')]
+  JDataMatrixWriter = interface(JObject)
+    ['{21DCEFBD-7799-4831-960F-4A01B01F263F}']
+    function encode(string_1: JString; barcodeFormat: JBarcodeFormat; int: Integer; int_1: Integer; map: JMap): JBitMatrix; overload; cdecl;
+    function encode(string_1: JString; barcodeFormat: JBarcodeFormat; int: Integer; int_1: Integer): JBitMatrix; overload; cdecl;
+  end;
+  TJDataMatrixWriter = class(TJavaGenericImport<JDataMatrixWriterClass, JDataMatrixWriter>) end;
+
+  JMinimalEncoderClass = interface(JObjectClass)
+    ['{8F92D14D-FB47-4C82-8859-D84F074A117B}']
+    {class} function encodeHighLevel(string_1: JString): JString; overload; cdecl;
+    {class} function encodeHighLevel(string_1: JString; charset: JCharset; int: Integer; symbolShapeHint: JSymbolShapeHint): JString; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/datamatrix/encoder/MinimalEncoder')]
+  JMinimalEncoder = interface(JObject)
+    ['{834DD00B-8573-4F86-AA87-FBC40F38FBBA}']
+  end;
+  TJMinimalEncoder = class(TJavaGenericImport<JMinimalEncoderClass, JMinimalEncoder>) end;
+
+  JHighLevelEncoderClass = interface(JObjectClass)
+    ['{6E85102A-2F21-424A-A678-3A58F8297827}']
+    {class} function determineConsecutiveDigitCount(charSequence: JCharSequence; int: Integer): Integer; cdecl;
+    {class} function encodeHighLevel(string_1: JString; symbolShapeHint: JSymbolShapeHint; dimension: JDimension; dimension_1: JDimension; boolean: Boolean): JString; overload; cdecl;
+    {class} function encodeHighLevel(string_1: JString; symbolShapeHint: JSymbolShapeHint; dimension: JDimension; dimension_1: JDimension): JString; overload; cdecl;
+    {class} function encodeHighLevel(string_1: JString): JString; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/datamatrix/encoder/HighLevelEncoder')]
+  JHighLevelEncoder = interface(JObject)
+    ['{A3EFA682-C338-49AC-82D7-A5F217A2ECA7}']
+  end;
+  TJHighLevelEncoder = class(TJavaGenericImport<JHighLevelEncoderClass, JHighLevelEncoder>) end;
+
+  Jencoder_ErrorCorrectionClass = interface(JObjectClass)
+    ['{841F76C9-51BA-44A1-8427-804638AFF445}']
+    {class} function encodeECC200(string_1: JString; symbolInfo: JSymbolInfo): JString; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/datamatrix/encoder/ErrorCorrection')]
+  Jencoder_ErrorCorrection = interface(JObject)
+    ['{66D1B56D-91AE-402F-A303-211070CEF552}']
+  end;
+  TJencoder_ErrorCorrection = class(TJavaGenericImport<Jencoder_ErrorCorrectionClass, Jencoder_ErrorCorrection>) end;
+
+  JSymbolShapeHintClass = interface(JEnumClass)
+    ['{E959D8C0-FD5C-4C81-A03D-E508ED3C63B3}']
+    {class} function _GetFORCE_NONE: JSymbolShapeHint; cdecl;
+    {class} function _GetFORCE_RECTANGLE: JSymbolShapeHint; cdecl;
+    {class} function _GetFORCE_SQUARE: JSymbolShapeHint; cdecl;
+    {class} function valueOf(string_1: JString): JSymbolShapeHint; cdecl;
+    {class} function values: TJavaObjectArray<JSymbolShapeHint>; cdecl;
+    {class} property FORCE_NONE: JSymbolShapeHint read _GetFORCE_NONE;
+    {class} property FORCE_RECTANGLE: JSymbolShapeHint read _GetFORCE_RECTANGLE;
+    {class} property FORCE_SQUARE: JSymbolShapeHint read _GetFORCE_SQUARE;
+  end;
+
+  [JavaSignature('com/google/zxing/datamatrix/encoder/SymbolShapeHint')]
+  JSymbolShapeHint = interface(JEnum)
+    ['{85E398D2-DCB7-475B-996B-21472DB7C5FF}']
+  end;
+  TJSymbolShapeHint = class(TJavaGenericImport<JSymbolShapeHintClass, JSymbolShapeHint>) end;
+
+  JSymbolInfoClass = interface(JObjectClass)
+    ['{A12BD536-FEA6-4908-A7BC-47E12C4459F2}']
+    {class} function init(boolean: Boolean; int_1: Integer; int: Integer; int_2: Integer; int_3: Integer; int_4: Integer): JSymbolInfo; cdecl;
+    {class} function lookup(int: Integer): JSymbolInfo; overload; cdecl;
+    {class} function lookup(int: Integer; symbolShapeHint: JSymbolShapeHint): JSymbolInfo; overload; cdecl;
+    {class} function lookup(int: Integer; symbolShapeHint: JSymbolShapeHint; dimension: JDimension; dimension_1: JDimension; boolean: Boolean): JSymbolInfo; overload; cdecl;
+    {class} function lookup(int: Integer; boolean: Boolean; boolean_1: Boolean): JSymbolInfo; overload; cdecl;
+    {class} procedure overrideSymbolSet(symbolInfos: TJavaObjectArray<JSymbolInfo>); cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/datamatrix/encoder/SymbolInfo')]
+  JSymbolInfo = interface(JObject)
+    ['{4D81649A-2B00-4B75-8044-38FD75291D6E}']
+    function _GetmatrixHeight: Integer; cdecl;
+    function _GetmatrixWidth: Integer; cdecl;
+    function getCodewordCount: Integer; cdecl;
+    function getDataCapacity: Integer; cdecl;
+    function getDataLengthForInterleavedBlock(int: Integer): Integer; cdecl;
+    function getErrorCodewords: Integer; cdecl;
+    function getErrorLengthForInterleavedBlock(int: Integer): Integer; cdecl;
+    function getInterleavedBlockCount: Integer; cdecl;
+    function getSymbolDataHeight: Integer; cdecl;
+    function getSymbolDataWidth: Integer; cdecl;
+    function getSymbolHeight: Integer; cdecl;
+    function getSymbolWidth: Integer; cdecl;
+    function toString: JString; cdecl;
+    property matrixHeight: Integer read _GetmatrixHeight;
+    property matrixWidth: Integer read _GetmatrixWidth;
+  end;
+  TJSymbolInfo = class(TJavaGenericImport<JSymbolInfoClass, JSymbolInfo>) end;
+
+  JDefaultPlacementClass = interface(JObjectClass)
+    ['{240B06A8-FBB1-4F2E-85A9-DDE7DB9F4201}']
+    {class} function init(charSequence: JCharSequence; int: Integer; int_1: Integer): JDefaultPlacement; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/datamatrix/encoder/DefaultPlacement')]
+  JDefaultPlacement = interface(JObject)
+    ['{C751F2AF-6370-426E-8F8A-896E841B0C7B}']
+    function getBit(int: Integer; int_1: Integer): Boolean; cdecl;
+    procedure place; cdecl;
+  end;
+  TJDefaultPlacement = class(TJavaGenericImport<JDefaultPlacementClass, JDefaultPlacement>) end;
+
+  JDecoderClass = interface(JObjectClass)
+    ['{B59BC0F6-4AB6-4C39-B42D-2BB8B182FA56}']
+    {class} function init: JDecoder; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/datamatrix/decoder/Decoder')]
+  JDecoder = interface(JObject)
+    ['{9AEF0B9F-E4E9-4D61-B859-07F4D43C62DF}']
+    function decode(bitMatrix: JBitMatrix): JDecoderResult; overload; cdecl;
+    function decode(booleanss: TJavaArray<Boolean>): JDecoderResult; overload; cdecl;
+  end;
+  TJDecoder = class(TJavaGenericImport<JDecoderClass, JDecoder>) end;
+
+  JVersionClass = interface(JObjectClass)
+    ['{3A4D4E5C-508B-400E-8BB2-6BB209DDA623}']
+    {class} function getVersionForDimensions(int: Integer; int_1: Integer): JVersion; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/datamatrix/decoder/Version')]
+  JVersion = interface(JObject)
+    ['{25E2684E-702D-4778-BE94-6BC6EFE2C34D}']
+    function getDataRegionSizeColumns: Integer; cdecl;
+    function getDataRegionSizeRows: Integer; cdecl;
+    function getSymbolSizeColumns: Integer; cdecl;
+    function getSymbolSizeRows: Integer; cdecl;
+    function getTotalCodewords: Integer; cdecl;
+    function getVersionNumber: Integer; cdecl;
+    function toString: JString; cdecl;
+  end;
+  TJVersion = class(TJavaGenericImport<JVersionClass, JVersion>) end;
+
+  JEncodeHintTypeClass = interface(JEnumClass)
+    ['{21372BAC-4BD6-4779-B624-18E004CD56DD}']
+    {class} function _GetAZTEC_LAYERS: JEncodeHintType; cdecl;
+    {class} function _GetCHARACTER_SET: JEncodeHintType; cdecl;
+    {class} function _GetCODE128_COMPACT: JEncodeHintType; cdecl;
+    {class} function _GetDATA_MATRIX_COMPACT: JEncodeHintType; cdecl;
+    {class} function _GetDATA_MATRIX_SHAPE: JEncodeHintType; cdecl;
+    {class} function _GetERROR_CORRECTION: JEncodeHintType; cdecl;
+    {class} function _GetFORCE_C40: JEncodeHintType; cdecl;
+    {class} function _GetFORCE_CODE_SET: JEncodeHintType; cdecl;
+    {class} function _GetGS1_FORMAT: JEncodeHintType; cdecl;
+    {class} function _GetMARGIN: JEncodeHintType; cdecl;
+    {class} function _GetMAX_SIZE: JEncodeHintType; cdecl;
+    {class} function _GetMIN_SIZE: JEncodeHintType; cdecl;
+    {class} function _GetPDF417_AUTO_ECI: JEncodeHintType; cdecl;
+    {class} function _GetPDF417_COMPACT: JEncodeHintType; cdecl;
+    {class} function _GetPDF417_COMPACTION: JEncodeHintType; cdecl;
+    {class} function _GetPDF417_DIMENSIONS: JEncodeHintType; cdecl;
+    {class} function _GetQR_COMPACT: JEncodeHintType; cdecl;
+    {class} function _GetQR_MASK_PATTERN: JEncodeHintType; cdecl;
+    {class} function _GetQR_VERSION: JEncodeHintType; cdecl;
+    {class} function valueOf(string_1: JString): JEncodeHintType; cdecl;
+    {class} function values: TJavaObjectArray<JEncodeHintType>; cdecl;
+    {class} property AZTEC_LAYERS: JEncodeHintType read _GetAZTEC_LAYERS;
+    {class} property CHARACTER_SET: JEncodeHintType read _GetCHARACTER_SET;
+    {class} property CODE128_COMPACT: JEncodeHintType read _GetCODE128_COMPACT;
+    {class} property DATA_MATRIX_COMPACT: JEncodeHintType read _GetDATA_MATRIX_COMPACT;
+    {class} property DATA_MATRIX_SHAPE: JEncodeHintType read _GetDATA_MATRIX_SHAPE;
+    {class} property ERROR_CORRECTION: JEncodeHintType read _GetERROR_CORRECTION;
+    {class} property FORCE_C40: JEncodeHintType read _GetFORCE_C40;
+    {class} property FORCE_CODE_SET: JEncodeHintType read _GetFORCE_CODE_SET;
+    {class} property GS1_FORMAT: JEncodeHintType read _GetGS1_FORMAT;
+    {class} property MARGIN: JEncodeHintType read _GetMARGIN;
+    {class} property MAX_SIZE: JEncodeHintType read _GetMAX_SIZE;
+    {class} property MIN_SIZE: JEncodeHintType read _GetMIN_SIZE;
+    {class} property PDF417_AUTO_ECI: JEncodeHintType read _GetPDF417_AUTO_ECI;
+    {class} property PDF417_COMPACT: JEncodeHintType read _GetPDF417_COMPACT;
+    {class} property PDF417_COMPACTION: JEncodeHintType read _GetPDF417_COMPACTION;
+    {class} property PDF417_DIMENSIONS: JEncodeHintType read _GetPDF417_DIMENSIONS;
+    {class} property QR_COMPACT: JEncodeHintType read _GetQR_COMPACT;
+    {class} property QR_MASK_PATTERN: JEncodeHintType read _GetQR_MASK_PATTERN;
+    {class} property QR_VERSION: JEncodeHintType read _GetQR_VERSION;
+  end;
+
+  [JavaSignature('com/google/zxing/EncodeHintType')]
+  JEncodeHintType = interface(JEnum)
+    ['{4242E7CB-D1B8-4FE5-A09A-DF5EE77DF89C}']
+  end;
+  TJEncodeHintType = class(TJavaGenericImport<JEncodeHintTypeClass, JEncodeHintType>) end;
+
+  JUPCAWriterClass = interface(JObjectClass)
+    ['{3E34A8B8-3899-4DA6-873A-3132135D1C2E}']
+    {class} function init: JUPCAWriter; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/UPCAWriter')]
+  JUPCAWriter = interface(JObject)
+    ['{DC251772-C1EC-4C5A-8C14-03E9784C8512}']
+    function encode(string_1: JString; barcodeFormat: JBarcodeFormat; int: Integer; int_1: Integer; map: JMap): JBitMatrix; overload; cdecl;
+    function encode(string_1: JString; barcodeFormat: JBarcodeFormat; int: Integer; int_1: Integer): JBitMatrix; overload; cdecl;
+  end;
+  TJUPCAWriter = class(TJavaGenericImport<JUPCAWriterClass, JUPCAWriter>) end;
+
+  JRSSUtilsClass = interface(JObjectClass)
+    ['{EF3FD91A-CC99-47F8-8D4D-A1D7E6D5AB0E}']
+    {class} function getRSSvalue(ints: TJavaArray<Integer>; int: Integer; boolean: Boolean): Integer; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/rss/RSSUtils')]
+  JRSSUtils = interface(JObject)
+    ['{82CE2BD8-C86C-4827-A3E1-47E4A376F740}']
+  end;
+  TJRSSUtils = class(TJavaGenericImport<JRSSUtilsClass, JRSSUtils>) end;
+
+  JFinderPatternClass = interface(JObjectClass)
+    ['{CCBAA00D-8FBD-44FE-B6E8-CCDB997CFF15}']
+    {class} function init(int: Integer; ints: TJavaArray<Integer>; int_1: Integer; int_2: Integer; int_3: Integer): JFinderPattern; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/rss/FinderPattern')]
+  JFinderPattern = interface(JObject)
+    ['{A5D7F1B2-625F-4A7A-BD19-BBC767554BB9}']
+    function equals(object_1: JObject): Boolean; cdecl;
+    function getResultPoints: TJavaObjectArray<JResultPoint>; cdecl;
+    function getStartEnd: TJavaArray<Integer>; cdecl;
+    function getValue: Integer; cdecl;
+    function hashCode: Integer; cdecl;
+  end;
+  TJFinderPattern = class(TJavaGenericImport<JFinderPatternClass, JFinderPattern>) end;
+
+  JDecodedObjectClass = interface(JObjectClass)
+    ['{7AEA257E-04A4-4187-BE77-4D5FA69352A1}']
+  end;
+
+  [JavaSignature('com/google/zxing/oned/rss/expanded/decoders/DecodedObject')]
+  JDecodedObject = interface(JObject)
+    ['{449B5069-807B-4C35-A9C1-B1F1691BE664}']
+  end;
+  TJDecodedObject = class(TJavaGenericImport<JDecodedObjectClass, JDecodedObject>) end;
+
+  JAbstractExpandedDecoderClass = interface(JObjectClass)
+    ['{DE74E863-BA97-4217-81CE-A69D438C0A6C}']
+    {class} function createDecoder(bitArray: JBitArray): JAbstractExpandedDecoder; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder')]
+  JAbstractExpandedDecoder = interface(JObject)
+    ['{7855DBBC-2A58-48E6-BD6E-E6662E88A042}']
+    function parseInformation: JString; cdecl;
+  end;
+  TJAbstractExpandedDecoder = class(TJavaGenericImport<JAbstractExpandedDecoderClass, JAbstractExpandedDecoder>) end;
+
+  JDataCharacterClass = interface(JObjectClass)
+    ['{ABF7A6DC-A366-402B-AFDF-007E9DE3FA0D}']
+    {class} function init(int: Integer; int_1: Integer): JDataCharacter; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/rss/DataCharacter')]
+  JDataCharacter = interface(JObject)
+    ['{372C990A-0D69-47B6-BC5B-9858120DA777}']
+    function equals(object_1: JObject): Boolean; cdecl;
+    function getChecksumPortion: Integer; cdecl;
+    function getValue: Integer; cdecl;
+    function hashCode: Integer; cdecl;
+    function toString: JString; cdecl;
+  end;
+  TJDataCharacter = class(TJavaGenericImport<JDataCharacterClass, JDataCharacter>) end;
+
+  JOneDimensionalCodeWriterClass = interface(JObjectClass)
+    ['{6F613B77-9CCA-496B-AD18-8C9454DCAEE8}']
+    {class} function init: JOneDimensionalCodeWriter; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/OneDimensionalCodeWriter')]
+  JOneDimensionalCodeWriter = interface(JObject)
+    ['{BBA3C9AB-E3E4-474E-9470-B922AB2EC9B5}']
+    function encode(string_1: JString; barcodeFormat: JBarcodeFormat; int: Integer; int_1: Integer; map: JMap): JBitMatrix; overload; cdecl;
+    function encode(string_1: JString; barcodeFormat: JBarcodeFormat; int: Integer; int_1: Integer): JBitMatrix; overload; cdecl;
+    function encode(string_1: JString; map: JMap): TJavaArray<Boolean>; overload; cdecl;
+    function encode(string_1: JString): TJavaArray<Boolean>; overload; cdecl;
+    function getDefaultMargin: Integer; cdecl;
+  end;
+  TJOneDimensionalCodeWriter = class(TJavaGenericImport<JOneDimensionalCodeWriterClass, JOneDimensionalCodeWriter>) end;
+
+  JITFWriterClass = interface(JOneDimensionalCodeWriterClass)
+    ['{749CE46A-A16C-4252-8EB2-41E7E8E5E9C5}']
+    {class} function init: JITFWriter; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/ITFWriter')]
+  JITFWriter = interface(JOneDimensionalCodeWriter)
+    ['{4A7E04F7-F928-42AB-A61A-AEB5231B53CA}']
+    function encode(string_1: JString): TJavaArray<Boolean>; cdecl;
+  end;
+  TJITFWriter = class(TJavaGenericImport<JITFWriterClass, JITFWriter>) end;
+
+  JCodaBarWriterClass = interface(JOneDimensionalCodeWriterClass)
+    ['{989C145F-B781-42AA-83D9-BDA5EC963AE4}']
+    {class} function init: JCodaBarWriter; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/CodaBarWriter')]
+  JCodaBarWriter = interface(JOneDimensionalCodeWriter)
+    ['{FCC04A29-1BBF-4DA0-8827-B9A349B52452}']
+    function encode(string_1: JString): TJavaArray<Boolean>; cdecl;
+  end;
+  TJCodaBarWriter = class(TJavaGenericImport<JCodaBarWriterClass, JCodaBarWriter>) end;
+
+  JCode128WriterClass = interface(JOneDimensionalCodeWriterClass)
+    ['{A094424E-8520-4AEF-AB9B-95A362AC2414}']
+    {class} function init: JCode128Writer; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/Code128Writer')]
+  JCode128Writer = interface(JOneDimensionalCodeWriter)
+    ['{D4BCA800-5516-4A13-BDD9-D51E0D6E29DA}']
+    function encode(string_1: JString; map: JMap): TJavaArray<Boolean>; overload; cdecl;
+    function encode(string_1: JString): TJavaArray<Boolean>; overload; cdecl;
+  end;
+  TJCode128Writer = class(TJavaGenericImport<JCode128WriterClass, JCode128Writer>) end;
+
+  JOneDReaderClass = interface(JObjectClass)
+    ['{DFD6FC1F-B9A5-4E7A-8554-632DB12B0715}']
+    {class} function init: JOneDReader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/OneDReader')]
+  JOneDReader = interface(JObject)
+    ['{7B550FA2-C1DC-4861-9B39-26F379A2FB71}']
+    function decode(binaryBitmap: JBinaryBitmap; map: JMap): JResult; overload; cdecl;
+    function decode(binaryBitmap: JBinaryBitmap): JResult; overload; cdecl;
+    function decodeRow(int: Integer; bitArray: JBitArray; map: JMap): JResult; cdecl;
+    procedure reset; cdecl;
+  end;
+  TJOneDReader = class(TJavaGenericImport<JOneDReaderClass, JOneDReader>) end;
+
+  JPDF417CommonClass = interface(JObjectClass)
+    ['{907ACF81-FD71-4B78-90C8-D3E3B7E0EAEC}']
+    {class} function _GetBARS_IN_MODULE: Integer; cdecl;
+    {class} function _GetMAX_CODEWORDS_IN_BARCODE: Integer; cdecl;
+    {class} function _GetMAX_ROWS_IN_BARCODE: Integer; cdecl;
+    {class} function _GetMIN_ROWS_IN_BARCODE: Integer; cdecl;
+    {class} function _GetMODULES_IN_CODEWORD: Integer; cdecl;
+    {class} function _GetMODULES_IN_STOP_PATTERN: Integer; cdecl;
+    {class} function _GetNUMBER_OF_CODEWORDS: Integer; cdecl;
+    {class} function _GetSYMBOL_TABLE: TJavaArray<Integer>; cdecl;
+    {class} function getBitCountSum(ints: TJavaArray<Integer>): Integer; cdecl;
+    {class} function getCodeword(int: Integer): Integer; cdecl;
+    {class} function toIntArray(collection: JCollection): TJavaArray<Integer>; cdecl;
+    {class} property BARS_IN_MODULE: Integer read _GetBARS_IN_MODULE;
+    {class} property MAX_CODEWORDS_IN_BARCODE: Integer read _GetMAX_CODEWORDS_IN_BARCODE;
+    {class} property MAX_ROWS_IN_BARCODE: Integer read _GetMAX_ROWS_IN_BARCODE;
+    {class} property MIN_ROWS_IN_BARCODE: Integer read _GetMIN_ROWS_IN_BARCODE;
+    {class} property MODULES_IN_CODEWORD: Integer read _GetMODULES_IN_CODEWORD;
+    {class} property MODULES_IN_STOP_PATTERN: Integer read _GetMODULES_IN_STOP_PATTERN;
+    {class} property NUMBER_OF_CODEWORDS: Integer read _GetNUMBER_OF_CODEWORDS;
+    {class} property SYMBOL_TABLE: TJavaArray<Integer> read _GetSYMBOL_TABLE;
+  end;
+
+  [JavaSignature('com/google/zxing/pdf417/PDF417Common')]
+  JPDF417Common = interface(JObject)
+    ['{B08BED63-6FB5-48A8-8A1B-68B12C754E3C}']
+  end;
+  TJPDF417Common = class(TJavaGenericImport<JPDF417CommonClass, JPDF417Common>) end;
+
+  JPDF417ReaderClass = interface(JObjectClass)
+    ['{D21F8E44-1BD7-4F79-A197-36BF7FE072A8}']
+    {class} function init: JPDF417Reader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/pdf417/PDF417Reader')]
+  JPDF417Reader = interface(JObject)
+    ['{C0FB64FC-2125-47DE-9B26-E23A4E1D044E}']
+    function decode(binaryBitmap: JBinaryBitmap; map: JMap): JResult; overload; cdecl;
+    function decode(binaryBitmap: JBinaryBitmap): JResult; overload; cdecl;
+    function decodeMultiple(binaryBitmap: JBinaryBitmap; map: JMap): TJavaObjectArray<JResult>; overload; cdecl;
+    function decodeMultiple(binaryBitmap: JBinaryBitmap): TJavaObjectArray<JResult>; overload; cdecl;
+    procedure reset; cdecl;
+  end;
+  TJPDF417Reader = class(TJavaGenericImport<JPDF417ReaderClass, JPDF417Reader>) end;
+
+  JDetectorClass = interface(JObjectClass)
+    ['{7AC0E66F-EA9F-496E-A8A8-12B3B05FA4A5}']
+    {class} function detect(binaryBitmap: JBinaryBitmap; map: JMap; boolean: Boolean): JPDF417DetectorResult; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/pdf417/detector/Detector')]
+  JDetector = interface(JObject)
+    ['{E88C8109-5C2D-41DE-94AE-12E5E9E7D1C7}']
+  end;
+  TJDetector = class(TJavaGenericImport<JDetectorClass, JDetector>) end;
+
+  JPDF417DetectorResultClass = interface(JObjectClass)
+    ['{F1859FDF-5987-4FA8-A083-C353440D2030}']
+    {class} function init(bitMatrix: JBitMatrix; list: JList; int: Integer): JPDF417DetectorResult; overload; cdecl;
+    {class} function init(bitMatrix: JBitMatrix; list: JList): JPDF417DetectorResult; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/pdf417/detector/PDF417DetectorResult')]
+  JPDF417DetectorResult = interface(JObject)
+    ['{E6E2D7C7-81DB-4BA4-AD79-31B0A4536DAA}']
+    function getBits: JBitMatrix; cdecl;
+    function getPoints: JList; cdecl;
+    function getRotation: Integer; cdecl;
+  end;
+  TJPDF417DetectorResult = class(TJavaGenericImport<JPDF417DetectorResultClass, JPDF417DetectorResult>) end;
+
+  JPDF417ResultMetadataClass = interface(JObjectClass)
+    ['{1F20EE83-2E59-473C-84FB-D4CBB8AE78FE}']
+    {class} function init: JPDF417ResultMetadata; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/pdf417/PDF417ResultMetadata')]
+  JPDF417ResultMetadata = interface(JObject)
+    ['{B0433355-E42A-432A-8496-3B3BE7461D5B}']
+    function getAddressee: JString; cdecl;
+    function getChecksum: Integer; cdecl;
+    function getFileId: JString; cdecl;
+    function getFileName: JString; cdecl;
+    function getFileSize: Int64; cdecl;
+    function getOptionalData: TJavaArray<Integer>; cdecl;
+    function getSegmentCount: Integer; cdecl;
+    function getSegmentIndex: Integer; cdecl;
+    function getSender: JString; cdecl;
+    function getTimestamp: Int64; cdecl;
+    function isLastSegment: Boolean; cdecl;
+    procedure setAddressee(string_1: JString); cdecl;
+    procedure setChecksum(int: Integer); cdecl;
+    procedure setFileId(string_1: JString); cdecl;
+    procedure setFileName(string_1: JString); cdecl;
+    procedure setFileSize(long: Int64); cdecl;
+    procedure setLastSegment(boolean: Boolean); cdecl;
+    procedure setOptionalData(ints: TJavaArray<Integer>); cdecl;
+    procedure setSegmentCount(int: Integer); cdecl;
+    procedure setSegmentIndex(int: Integer); cdecl;
+    procedure setSender(string_1: JString); cdecl;
+    procedure setTimestamp(long: Int64); cdecl;
+  end;
+  TJPDF417ResultMetadata = class(TJavaGenericImport<JPDF417ResultMetadataClass, JPDF417ResultMetadata>) end;
+
+  JPDF417WriterClass = interface(JObjectClass)
+    ['{D7B1ED18-20BE-4ED4-9F2D-3C3422E98712}']
+    {class} function init: JPDF417Writer; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/pdf417/PDF417Writer')]
+  JPDF417Writer = interface(JObject)
+    ['{E1150370-FE7B-4B1B-9444-148214AE7A3C}']
+    function encode(string_1: JString; barcodeFormat: JBarcodeFormat; int: Integer; int_1: Integer): JBitMatrix; overload; cdecl;
+    function encode(string_1: JString; barcodeFormat: JBarcodeFormat; int: Integer; int_1: Integer; map: JMap): JBitMatrix; overload; cdecl;
+  end;
+  TJPDF417Writer = class(TJavaGenericImport<JPDF417WriterClass, JPDF417Writer>) end;
+
+  JCompactionClass = interface(JEnumClass)
+    ['{64FF3235-145A-4000-9A1E-9D188F36F379}']
+    {class} function _GetAUTO: JCompaction; cdecl;
+    {class} function _GetBYTE: JCompaction; cdecl;
+    {class} function _GetNUMERIC: JCompaction; cdecl;
+    {class} function _GetTEXT: JCompaction; cdecl;
+    {class} function valueOf(string_1: JString): JCompaction; cdecl;
+    {class} function values: TJavaObjectArray<JCompaction>; cdecl;
+    {class} property AUTO: JCompaction read _GetAUTO;
+    {class} property BYTE: JCompaction read _GetBYTE;
+    {class} property NUMERIC: JCompaction read _GetNUMERIC;
+    {class} property TEXT: JCompaction read _GetTEXT;
+  end;
+
+  [JavaSignature('com/google/zxing/pdf417/encoder/Compaction')]
+  JCompaction = interface(JEnum)
+    ['{BCD42995-4282-49A9-AABC-BF90D9F4D030}']
+  end;
+  TJCompaction = class(TJavaGenericImport<JCompactionClass, JCompaction>) end;
+
+  JPDF417Class = interface(JObjectClass)
+    ['{5FC0F80E-D20A-426B-924C-82A7271AFC65}']
+    {class} function init: JPDF417; overload; cdecl;
+    {class} function init(boolean: Boolean): JPDF417; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/pdf417/encoder/PDF417')]
+  JPDF417 = interface(JObject)
+    ['{5996D191-E404-4809-B3BE-F59EB49B9C25}']
+    procedure generateBarcodeLogic(string_1: JString; int: Integer; boolean: Boolean); overload; cdecl;
+    procedure generateBarcodeLogic(string_1: JString; int: Integer); overload; cdecl;
+    function getBarcodeMatrix: JBarcodeMatrix; cdecl;
+    procedure setCompact(boolean: Boolean); cdecl;
+    procedure setCompaction(compaction: JCompaction); cdecl;
+    procedure setDimensions(int: Integer; int_1: Integer; int_2: Integer; int_3: Integer); cdecl;
+    procedure setEncoding(charset: JCharset); cdecl;
+  end;
+  TJPDF417 = class(TJavaGenericImport<JPDF417Class, JPDF417>) end;
+
+  JDimensionsClass = interface(JObjectClass)
+    ['{A7278006-7676-4BD0-961A-7A1B138CDE69}']
+    {class} function init(int: Integer; int_1: Integer; int_2: Integer; int_3: Integer): JDimensions; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/pdf417/encoder/Dimensions')]
+  JDimensions = interface(JObject)
+    ['{C6325D09-8C0A-4536-81A9-955974BBD2EE}']
+    function getMaxCols: Integer; cdecl;
+    function getMaxRows: Integer; cdecl;
+    function getMinCols: Integer; cdecl;
+    function getMinRows: Integer; cdecl;
+  end;
+  TJDimensions = class(TJavaGenericImport<JDimensionsClass, JDimensions>) end;
+
+  JPDF417HighLevelEncoderTestAdapterClass = interface(JObjectClass)
+    ['{83880375-5368-41EE-ABC1-1F94381F0E30}']
+    {class} function encodeHighLevel(string_1: JString; compaction: JCompaction; charset: JCharset; boolean: Boolean): JString; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/pdf417/encoder/PDF417HighLevelEncoderTestAdapter')]
+  JPDF417HighLevelEncoderTestAdapter = interface(JObject)
+    ['{2707862B-60AA-4AB0-BDF6-FC893431B7F3}']
+  end;
+  TJPDF417HighLevelEncoderTestAdapter = class(TJavaGenericImport<JPDF417HighLevelEncoderTestAdapterClass, JPDF417HighLevelEncoderTestAdapter>) end;
+
+  JBarcodeMatrixClass = interface(JObjectClass)
+    ['{9CA675D5-50DD-40BF-81C7-26F51EF52C42}']
+  end;
+
+  [JavaSignature('com/google/zxing/pdf417/encoder/BarcodeMatrix')]
+  JBarcodeMatrix = interface(JObject)
+    ['{5FBAA4F8-74EA-48CD-8FC9-70D2798408A9}']
+    function getMatrix: TJavaArray<Byte>; cdecl;
+    function getScaledMatrix(int: Integer; int_1: Integer): TJavaArray<Byte>; cdecl;
+  end;
+  TJBarcodeMatrix = class(TJavaGenericImport<JBarcodeMatrixClass, JBarcodeMatrix>) end;
+
+  JErrorCorrectionClass = interface(JObjectClass)
+    ['{F33F4011-BA22-4D66-AC35-B46217D69EAC}']
+    {class} function init: JErrorCorrection; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/pdf417/decoder/ec/ErrorCorrection')]
+  JErrorCorrection = interface(JObject)
+    ['{3DC33EC8-06EB-402A-9AD1-E4AAF1C71953}']
+    function decode(ints: TJavaArray<Integer>; int: Integer; ints_1: TJavaArray<Integer>): Integer; cdecl;
+  end;
+  TJErrorCorrection = class(TJavaGenericImport<JErrorCorrectionClass, JErrorCorrection>) end;
+
+  JModulusGFClass = interface(JObjectClass)
+    ['{1CF736BE-2C1F-4271-8A30-CEF06AB8BA3E}']
+    {class} function _GetPDF417_GF: JModulusGF; cdecl;
+    {class} property PDF417_GF: JModulusGF read _GetPDF417_GF;
+  end;
+
+  [JavaSignature('com/google/zxing/pdf417/decoder/ec/ModulusGF')]
+  JModulusGF = interface(JObject)
+    ['{3CAE14FF-295F-48CD-9B1C-F5C5613E44DC}']
+  end;
+  TJModulusGF = class(TJavaGenericImport<JModulusGFClass, JModulusGF>) end;
+
+  JPDF417ScanningDecoderClass = interface(JObjectClass)
+    ['{ED089C1F-2AD9-43D0-94BD-FA5D8C0E5E10}']
+    {class} function decode(bitMatrix: JBitMatrix; resultPoint: JResultPoint; resultPoint_1: JResultPoint; resultPoint_2: JResultPoint; resultPoint_3: JResultPoint; int: Integer; int_1: Integer): JDecoderResult; cdecl;
+    {class} function toString(barcodeValuess: TJavaObjectArray<JBarcodeValue[]>): JString; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/pdf417/decoder/PDF417ScanningDecoder')]
+  JPDF417ScanningDecoder = interface(JObject)
+    ['{1DD7E799-FD80-47BB-A82A-8127947A61FF}']
+  end;
+  TJPDF417ScanningDecoder = class(TJavaGenericImport<JPDF417ScanningDecoderClass, JPDF417ScanningDecoder>) end;
+
+  JMultiFinderPatternFinderClass = interface(JFinderPatternFinderClass)
+    ['{4688F5B7-4AFF-4A6F-B756-56EFE5F20E3A}']
+    {class} function init(bitMatrix: JBitMatrix; resultPointCallback: JResultPointCallback): JMultiFinderPatternFinder; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/multi/qrcode/detector/MultiFinderPatternFinder')]
+  JMultiFinderPatternFinder = interface(JFinderPatternFinder)
+    ['{072A8C34-23C7-4895-95B5-EAA24210353B}']
+    function findMulti(map: JMap): TJavaObjectArray<JFinderPatternInfo>; cdecl;
+  end;
+  TJMultiFinderPatternFinder = class(TJavaGenericImport<JMultiFinderPatternFinderClass, JMultiFinderPatternFinder>) end;
+
+  JMultiDetectorClass = interface(Jdetector_DetectorClass)
+    ['{650BB298-6A48-4DC8-961F-B51969F42CE6}']
+    {class} function init(bitMatrix: JBitMatrix): JMultiDetector; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/multi/qrcode/detector/MultiDetector')]
+  JMultiDetector = interface(Jdetector_Detector)
+    ['{E8633E23-8380-47AF-8354-7FF0A1B137B0}']
+    function detectMulti(map: JMap): TJavaObjectArray<JDetectorResult>; cdecl;
+  end;
+  TJMultiDetector = class(TJavaGenericImport<JMultiDetectorClass, JMultiDetector>) end;
+
+  JQRCodeMultiReaderClass = interface(JQRCodeReaderClass)
+    ['{45685E4D-780F-44B0-8289-00422EC0C7E9}']
+    {class} function init: JQRCodeMultiReader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/multi/qrcode/QRCodeMultiReader')]
+  JQRCodeMultiReader = interface(JQRCodeReader)
+    ['{5E5A4D69-413B-42A9-A05F-4F901B4D2725}']
+    function decodeMultiple(binaryBitmap: JBinaryBitmap; map: JMap): TJavaObjectArray<JResult>; overload; cdecl;
+    function decodeMultiple(binaryBitmap: JBinaryBitmap): TJavaObjectArray<JResult>; overload; cdecl;
+  end;
+  TJQRCodeMultiReader = class(TJavaGenericImport<JQRCodeMultiReaderClass, JQRCodeMultiReader>) end;
+
+  JChecksumExceptionClass = interface(JReaderExceptionClass)
+    ['{D3701569-3544-420C-AFB3-6A06B6509361}']
+    {class} function getChecksumInstance: JChecksumException; overload; cdecl;
+    {class} function getChecksumInstance(throwable: JThrowable): JChecksumException; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/ChecksumException')]
+  JChecksumException = interface(JReaderException)
+    ['{2935BCAA-C614-48D7-BB20-9FAE3CD2BE3C}']
+  end;
+  TJChecksumException = class(TJavaGenericImport<JChecksumExceptionClass, JChecksumException>) end;
+
+  Jdetector_FinderPatternClass = interface(JResultPointClass)
+    ['{156DA537-F735-4DE3-9011-EFA1BE66C1D3}']
+  end;
+
+  [JavaSignature('com/google/zxing/qrcode/detector/FinderPattern')]
+  Jdetector_FinderPattern = interface(JResultPoint)
+    ['{5054A4C6-06A2-4127-9CA6-4AA9CAA762C6}']
+    function getCount: Integer; cdecl;
+    function getEstimatedModuleSize: Single; cdecl;
+  end;
+  TJdetector_FinderPattern = class(TJavaGenericImport<Jdetector_FinderPatternClass, Jdetector_FinderPattern>) end;
+
+  JAlignmentPatternClass = interface(JResultPointClass)
+    ['{243D78FC-337B-4ACE-BAAE-F56B62B29EA1}']
+  end;
+
+  [JavaSignature('com/google/zxing/qrcode/detector/AlignmentPattern')]
+  JAlignmentPattern = interface(JResultPoint)
+    ['{4412CCB5-22ED-4943-A939-8594B6DBDCEA}']
+  end;
+  TJAlignmentPattern = class(TJavaGenericImport<JAlignmentPatternClass, JAlignmentPattern>) end;
+
+  JDefaultGridSamplerClass = interface(JGridSamplerClass)
+    ['{DB0CC4F0-95D4-45C4-8C86-75AFB4FF389D}']
+    {class} function init: JDefaultGridSampler; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/DefaultGridSampler')]
+  JDefaultGridSampler = interface(JGridSampler)
+    ['{9B5832CD-F32C-4FA0-98A6-282E50872FBC}']
+    function sampleGrid(bitMatrix: JBitMatrix; int: Integer; int_1: Integer; perspectiveTransform: JPerspectiveTransform): JBitMatrix; overload; cdecl;
+    function sampleGrid(bitMatrix: JBitMatrix; int: Integer; int_1: Integer; float: Single; float_1: Single; float_2: Single; float_3: Single; float_4: Single; float_5: Single; float_6: Single; float_7: Single; float_8: Single; float_9: Single; float_10: Single; float_11: Single; float_12: Single; float_13: Single; float_14: Single; float_15: Single): JBitMatrix; overload; cdecl;
+  end;
+  TJDefaultGridSampler = class(TJavaGenericImport<JDefaultGridSamplerClass, JDefaultGridSampler>) end;
+
+  JGlobalHistogramBinarizerClass = interface(JBinarizerClass)
+    ['{602E11F5-84E8-4449-ACCC-C3BCE16876A6}']
+    {class} function init(luminanceSource: JLuminanceSource): JGlobalHistogramBinarizer; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/GlobalHistogramBinarizer')]
+  JGlobalHistogramBinarizer = interface(JBinarizer)
+    ['{F9E26A3B-7589-4EE8-97B1-2F9DBC0D5458}']
+    function createBinarizer(luminanceSource: JLuminanceSource): JBinarizer; cdecl;
+    function getBlackMatrix: JBitMatrix; cdecl;
+    function getBlackRow(int: Integer; bitArray: JBitArray): JBitArray; cdecl;
+  end;
+  TJGlobalHistogramBinarizer = class(TJavaGenericImport<JGlobalHistogramBinarizerClass, JGlobalHistogramBinarizer>) end;
+
+  JPlanarYUVLuminanceSourceClass = interface(JLuminanceSourceClass)
+    ['{73C8856F-B3D4-4864-9BCB-6C40A4BA944C}']
+    {class} function init(bytes: TJavaArray<Byte>; int: Integer; int_1: Integer; int_2: Integer; int_3: Integer; int_4: Integer; int_5: Integer; boolean: Boolean): JPlanarYUVLuminanceSource; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/PlanarYUVLuminanceSource')]
+  JPlanarYUVLuminanceSource = interface(JLuminanceSource)
+    ['{C00DCE51-D2A0-4289-A5B0-604495E77D37}']
+    function crop(int: Integer; int_1: Integer; int_2: Integer; int_3: Integer): JLuminanceSource; cdecl;
+    function getMatrix: TJavaArray<Byte>; cdecl;
+    function getRow(int: Integer; bytes: TJavaArray<Byte>): TJavaArray<Byte>; cdecl;
+    function getThumbnailHeight: Integer; cdecl;
+    function getThumbnailWidth: Integer; cdecl;
+    function isCropSupported: Boolean; cdecl;
+    function renderThumbnail: TJavaArray<Integer>; cdecl;
+  end;
+  TJPlanarYUVLuminanceSource = class(TJavaGenericImport<JPlanarYUVLuminanceSourceClass, JPlanarYUVLuminanceSource>) end;
+
+  JRGBLuminanceSourceClass = interface(JLuminanceSourceClass)
+    ['{244B2871-E576-4817-AAD9-410C960F3404}']
+    {class} function init(int: Integer; int_1: Integer; ints: TJavaArray<Integer>): JRGBLuminanceSource; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/RGBLuminanceSource')]
+  JRGBLuminanceSource = interface(JLuminanceSource)
+    ['{82E4E76B-E3AA-415D-BFBD-18FAF98DFBFC}']
+    function crop(int: Integer; int_1: Integer; int_2: Integer; int_3: Integer): JLuminanceSource; cdecl;
+    function getMatrix: TJavaArray<Byte>; cdecl;
+    function getRow(int: Integer; bytes: TJavaArray<Byte>): TJavaArray<Byte>; cdecl;
+    function isCropSupported: Boolean; cdecl;
+  end;
+  TJRGBLuminanceSource = class(TJavaGenericImport<JRGBLuminanceSourceClass, JRGBLuminanceSource>) end;
+
+  JProductParsedResultClass = interface(JParsedResultClass)
+    ['{260332A1-80AC-4A93-8A3C-F49DD4249937}']
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/ProductParsedResult')]
+  JProductParsedResult = interface(JParsedResult)
+    ['{501645BB-88C2-4CD6-88D1-E6EF6D2286C5}']
+    function getDisplayResult: JString; cdecl;
+    function getNormalizedProductID: JString; cdecl;
+    function getProductID: JString; cdecl;
+  end;
+  TJProductParsedResult = class(TJavaGenericImport<JProductParsedResultClass, JProductParsedResult>) end;
+
+  JExpandedProductResultParserClass = interface(JResultParserClass)
+    ['{43DCC73A-3C6A-4A50-B1AD-E034C7259D0C}']
+    {class} function init: JExpandedProductResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/ExpandedProductResultParser')]
+  JExpandedProductResultParser = interface(JResultParser)
+    ['{2B93F4B1-777D-460F-B03A-430517994C7B}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JExpandedProductParsedResult; overload; cdecl;
+  end;
+  TJExpandedProductResultParser = class(TJavaGenericImport<JExpandedProductResultParserClass, JExpandedProductResultParser>) end;
+
+  JAbstractDoCoMoResultParserClass = interface(JResultParserClass)
+    ['{49A4F6E4-BB2B-4AD0-8E33-C9AD614B8CF2}']
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/AbstractDoCoMoResultParser')]
+  JAbstractDoCoMoResultParser = interface(JResultParser)
+    ['{71BA53B6-F094-4DE9-A6EE-CBEFE85F51AB}']
+  end;
+  TJAbstractDoCoMoResultParser = class(TJavaGenericImport<JAbstractDoCoMoResultParserClass, JAbstractDoCoMoResultParser>) end;
+
+  JEmailAddressParsedResultClass = interface(JParsedResultClass)
+    ['{7DD0B246-9A3D-420F-909C-AC147A8EBC8F}']
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/EmailAddressParsedResult')]
+  JEmailAddressParsedResult = interface(JParsedResult)
+    ['{28257AED-6B52-4B14-80C5-251674CF127D}']
+    function getBCCs: TJavaObjectArray<JString>; cdecl;
+    function getBody: JString; cdecl;
+    function getCCs: TJavaObjectArray<JString>; cdecl;
+    function getDisplayResult: JString; cdecl;
+    function getEmailAddress: JString; cdecl;
+    function getMailtoURI: JString; cdecl;
+    function getSubject: JString; cdecl;
+    function getTos: TJavaObjectArray<JString>; cdecl;
+  end;
+  TJEmailAddressParsedResult = class(TJavaGenericImport<JEmailAddressParsedResultClass, JEmailAddressParsedResult>) end;
+
+  JAddressBookAUResultParserClass = interface(JResultParserClass)
+    ['{8178A260-91F7-4DE3-B870-975D01245043}']
+    {class} function init: JAddressBookAUResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/AddressBookAUResultParser')]
+  JAddressBookAUResultParser = interface(JResultParser)
+    ['{58022AC7-8B02-4521-B16F-0DBD1E889513}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JAddressBookParsedResult; overload; cdecl;
+  end;
+  TJAddressBookAUResultParser = class(TJavaGenericImport<JAddressBookAUResultParserClass, JAddressBookAUResultParser>) end;
+
+  JBizcardResultParserClass = interface(JAbstractDoCoMoResultParserClass)
+    ['{0A98E3AE-8701-44BA-8095-20AFBF85BC46}']
+    {class} function init: JBizcardResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/BizcardResultParser')]
+  JBizcardResultParser = interface(JAbstractDoCoMoResultParser)
+    ['{45F6FD5A-4806-4C1A-9788-B772F7CDD02A}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JAddressBookParsedResult; overload; cdecl;
+  end;
+  TJBizcardResultParser = class(TJavaGenericImport<JBizcardResultParserClass, JBizcardResultParser>) end;
+
+  JCalendarParsedResultClass = interface(JParsedResultClass)
+    ['{4991497B-EE23-47F6-A170-B7B9F64EF4CF}']
+    {class} function init(string_1: JString; string_2: JString; string_3: JString; string_4: JString; string_5: JString; string_6: JString; strings: TJavaObjectArray<JString>; string_7: JString; double: Double; double_1: Double): JCalendarParsedResult; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/CalendarParsedResult')]
+  JCalendarParsedResult = interface(JParsedResult)
+    ['{CF033205-A049-4936-A048-DC4F6546B691}']
+    function getAttendees: TJavaObjectArray<JString>; cdecl;
+    function getDescription: JString; cdecl;
+    function getDisplayResult: JString; cdecl;
+    function getEnd: JDate; cdecl;
+    function getEndTimestamp: Int64; cdecl;
+    function getLatitude: Double; cdecl;
+    function getLocation: JString; cdecl;
+    function getLongitude: Double; cdecl;
+    function getOrganizer: JString; cdecl;
+    function getStart: JDate; cdecl;
+    function getStartTimestamp: Int64; cdecl;
+    function getSummary: JString; cdecl;
+    function isEndAllDay: Boolean; cdecl;
+    function isStartAllDay: Boolean; cdecl;
+  end;
+  TJCalendarParsedResult = class(TJavaGenericImport<JCalendarParsedResultClass, JCalendarParsedResult>) end;
+
+  JVINResultParserClass = interface(JResultParserClass)
+    ['{C265C3EA-9607-4A01-BDAA-40ED424B4248}']
+    {class} function init: JVINResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/VINResultParser')]
+  JVINResultParser = interface(JResultParser)
+    ['{A26803C2-931D-4984-A015-F45A41C7A32A}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JVINParsedResult; overload; cdecl;
+  end;
+  TJVINResultParser = class(TJavaGenericImport<JVINResultParserClass, JVINResultParser>) end;
+
+  JTelParsedResultClass = interface(JParsedResultClass)
+    ['{FC115957-591A-4553-8D45-F78D469DA597}']
+    {class} function init(string_1: JString; string_2: JString; string_3: JString): JTelParsedResult; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/TelParsedResult')]
+  JTelParsedResult = interface(JParsedResult)
+    ['{3AD68F84-144A-4177-85EE-8E8ADFD36903}']
+    function getDisplayResult: JString; cdecl;
+    function getNumber: JString; cdecl;
+    function getTelURI: JString; cdecl;
+    function getTitle: JString; cdecl;
+  end;
+  TJTelParsedResult = class(TJavaGenericImport<JTelParsedResultClass, JTelParsedResult>) end;
+
+  JProductResultParserClass = interface(JResultParserClass)
+    ['{092D656B-3C65-4BB5-9E59-4D43A7ACAD72}']
+    {class} function init: JProductResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/ProductResultParser')]
+  JProductResultParser = interface(JResultParser)
+    ['{30DE519D-4DFA-463D-9C31-81551E1F8E72}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JProductParsedResult; overload; cdecl;
+  end;
+  TJProductResultParser = class(TJavaGenericImport<JProductResultParserClass, JProductResultParser>) end;
+
+  JGeoParsedResultClass = interface(JParsedResultClass)
+    ['{72A9704A-F558-4B06-A9C1-0FB433BED96C}']
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/GeoParsedResult')]
+  JGeoParsedResult = interface(JParsedResult)
+    ['{34859979-4B9F-476D-800B-CE00DDD1240D}']
+    function getAltitude: Double; cdecl;
+    function getDisplayResult: JString; cdecl;
+    function getGeoURI: JString; cdecl;
+    function getLatitude: Double; cdecl;
+    function getLongitude: Double; cdecl;
+    function getQuery: JString; cdecl;
+  end;
+  TJGeoParsedResult = class(TJavaGenericImport<JGeoParsedResultClass, JGeoParsedResult>) end;
+
+  JEmailDoCoMoResultParserClass = interface(JAbstractDoCoMoResultParserClass)
+    ['{7F2F4118-D906-4371-A353-B391B4B38196}']
+    {class} function init: JEmailDoCoMoResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/EmailDoCoMoResultParser')]
+  JEmailDoCoMoResultParser = interface(JAbstractDoCoMoResultParser)
+    ['{4002224C-3C38-4367-A75A-0C011D05FD5E}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JEmailAddressParsedResult; overload; cdecl;
+  end;
+  TJEmailDoCoMoResultParser = class(TJavaGenericImport<JEmailDoCoMoResultParserClass, JEmailDoCoMoResultParser>) end;
+
+  JISBNResultParserClass = interface(JResultParserClass)
+    ['{B7D63B1C-8AF3-43C8-A08D-0B4BED3D0572}']
+    {class} function init: JISBNResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/ISBNResultParser')]
+  JISBNResultParser = interface(JResultParser)
+    ['{F9B30107-5C53-4384-952F-9298B230AE0B}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JISBNParsedResult; overload; cdecl;
+  end;
+  TJISBNResultParser = class(TJavaGenericImport<JISBNResultParserClass, JISBNResultParser>) end;
+
+  JGeoResultParserClass = interface(JResultParserClass)
+    ['{D533D599-BD00-41AC-AFBA-BC814DF66026}']
+    {class} function init: JGeoResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/GeoResultParser')]
+  JGeoResultParser = interface(JResultParser)
+    ['{C1428171-A78C-456A-91C7-AA5F6E689682}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JGeoParsedResult; overload; cdecl;
+  end;
+  TJGeoResultParser = class(TJavaGenericImport<JGeoResultParserClass, JGeoResultParser>) end;
+
+  JEmailAddressResultParserClass = interface(JResultParserClass)
+    ['{2791D328-F170-4488-91F3-DF87E8E3C289}']
+    {class} function init: JEmailAddressResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/EmailAddressResultParser')]
+  JEmailAddressResultParser = interface(JResultParser)
+    ['{6542797C-0967-4FDF-84F9-BE06B7761B70}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JEmailAddressParsedResult; overload; cdecl;
+  end;
+  TJEmailAddressResultParser = class(TJavaGenericImport<JEmailAddressResultParserClass, JEmailAddressResultParser>) end;
+
+  JISBNParsedResultClass = interface(JParsedResultClass)
+    ['{3CB61AF0-ACE8-4504-AFF8-976E5B79BD6E}']
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/ISBNParsedResult')]
+  JISBNParsedResult = interface(JParsedResult)
+    ['{50171FA4-2571-4771-84CB-843CBF6442FE}']
+    function getDisplayResult: JString; cdecl;
+    function getISBN: JString; cdecl;
+  end;
+  TJISBNParsedResult = class(TJavaGenericImport<JISBNParsedResultClass, JISBNParsedResult>) end;
+
+  JAddressBookParsedResultClass = interface(JParsedResultClass)
+    ['{E2931E28-AE4C-4B93-BEAD-395EA3E195F2}']
+    {class} function init(strings: TJavaObjectArray<JString>; strings_1: TJavaObjectArray<JString>; strings_2: TJavaObjectArray<JString>; strings_3: TJavaObjectArray<JString>; strings_4: TJavaObjectArray<JString>; strings_5: TJavaObjectArray<JString>; strings_6: TJavaObjectArray<JString>): JAddressBookParsedResult; overload; cdecl;
+    {class} function init(strings: TJavaObjectArray<JString>; strings_1: TJavaObjectArray<JString>; string_1: JString; strings_2: TJavaObjectArray<JString>; strings_3: TJavaObjectArray<JString>; strings_4: TJavaObjectArray<JString>; strings_5: TJavaObjectArray<JString>; string_2: JString; string_3: JString; strings_6: TJavaObjectArray<JString>; strings_7: TJavaObjectArray<JString>; string_4: JString; string_5: JString; string_6: JString; strings_8: TJavaObjectArray<JString>; strings_9: TJavaObjectArray<JString>): JAddressBookParsedResult; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/AddressBookParsedResult')]
+  JAddressBookParsedResult = interface(JParsedResult)
+    ['{948FE681-5BA0-4D7F-B852-258B2B1501D9}']
+    function getAddressTypes: TJavaObjectArray<JString>; cdecl;
+    function getAddresses: TJavaObjectArray<JString>; cdecl;
+    function getBirthday: JString; cdecl;
+    function getDisplayResult: JString; cdecl;
+    function getEmailTypes: TJavaObjectArray<JString>; cdecl;
+    function getEmails: TJavaObjectArray<JString>; cdecl;
+    function getGeo: TJavaObjectArray<JString>; cdecl;
+    function getInstantMessenger: JString; cdecl;
+    function getNames: TJavaObjectArray<JString>; cdecl;
+    function getNicknames: TJavaObjectArray<JString>; cdecl;
+    function getNote: JString; cdecl;
+    function getOrg: JString; cdecl;
+    function getPhoneNumbers: TJavaObjectArray<JString>; cdecl;
+    function getPhoneTypes: TJavaObjectArray<JString>; cdecl;
+    function getPronunciation: JString; cdecl;
+    function getTitle: JString; cdecl;
+    function getURLs: TJavaObjectArray<JString>; cdecl;
+  end;
+  TJAddressBookParsedResult = class(TJavaGenericImport<JAddressBookParsedResultClass, JAddressBookParsedResult>) end;
+
+  JVCardResultParserClass = interface(JResultParserClass)
+    ['{9E730294-5780-45B1-B3A9-64383256A987}']
+    {class} function init: JVCardResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/VCardResultParser')]
+  JVCardResultParser = interface(JResultParser)
+    ['{33D8029E-FF32-4B02-9BF1-E476C5B6A3D7}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JAddressBookParsedResult; overload; cdecl;
+  end;
+  TJVCardResultParser = class(TJavaGenericImport<JVCardResultParserClass, JVCardResultParser>) end;
+
+  JTelResultParserClass = interface(JResultParserClass)
+    ['{300485B6-7318-4781-A215-EBE895857174}']
+    {class} function init: JTelResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/TelResultParser')]
+  JTelResultParser = interface(JResultParser)
+    ['{2D72596F-15D8-480F-926C-849135D92116}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JTelParsedResult; overload; cdecl;
+  end;
+  TJTelResultParser = class(TJavaGenericImport<JTelResultParserClass, JTelResultParser>) end;
+
+  JURLTOResultParserClass = interface(JResultParserClass)
+    ['{F8CA14EA-3FC9-4130-852D-70D1A12BF94F}']
+    {class} function init: JURLTOResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/URLTOResultParser')]
+  JURLTOResultParser = interface(JResultParser)
+    ['{FFBDAD95-6098-4ED5-AD07-A55DBB2AAE18}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JURIParsedResult; overload; cdecl;
+  end;
+  TJURLTOResultParser = class(TJavaGenericImport<JURLTOResultParserClass, JURLTOResultParser>) end;
+
+  JURIResultParserClass = interface(JResultParserClass)
+    ['{43A259CB-3F74-4D33-9FBC-779EAD09EEA1}']
+    {class} function init: JURIResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/URIResultParser')]
+  JURIResultParser = interface(JResultParser)
+    ['{9C86ACDB-E8BE-40AF-B1A6-75FCB070AFAA}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JURIParsedResult; overload; cdecl;
+  end;
+  TJURIResultParser = class(TJavaGenericImport<JURIResultParserClass, JURIResultParser>) end;
+
+  JSMTPResultParserClass = interface(JResultParserClass)
+    ['{3A723713-3C18-46DE-BDE2-FBAC59118186}']
+    {class} function init: JSMTPResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/SMTPResultParser')]
+  JSMTPResultParser = interface(JResultParser)
+    ['{D4AA18C5-74CE-49E5-AA46-A05CEEABCC05}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JEmailAddressParsedResult; overload; cdecl;
+  end;
+  TJSMTPResultParser = class(TJavaGenericImport<JSMTPResultParserClass, JSMTPResultParser>) end;
+
+  JAddressBookDoCoMoResultParserClass = interface(JAbstractDoCoMoResultParserClass)
+    ['{24A7C684-9803-4CCC-8341-AE1272BC9981}']
+    {class} function init: JAddressBookDoCoMoResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/AddressBookDoCoMoResultParser')]
+  JAddressBookDoCoMoResultParser = interface(JAbstractDoCoMoResultParser)
+    ['{55CE52DD-7C5D-4A38-AB2E-57E36E8A86A0}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JAddressBookParsedResult; overload; cdecl;
+  end;
+  TJAddressBookDoCoMoResultParser = class(TJavaGenericImport<JAddressBookDoCoMoResultParserClass, JAddressBookDoCoMoResultParser>) end;
+
+  JWifiResultParserClass = interface(JResultParserClass)
+    ['{ECDE857B-DDA4-40E4-8979-0574C46D850C}']
+    {class} function init: JWifiResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/WifiResultParser')]
+  JWifiResultParser = interface(JResultParser)
+    ['{B652B84D-1DF5-4860-A709-E13B1CB72FA9}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JWifiParsedResult; overload; cdecl;
+  end;
+  TJWifiResultParser = class(TJavaGenericImport<JWifiResultParserClass, JWifiResultParser>) end;
+
+  JSMSMMSResultParserClass = interface(JResultParserClass)
+    ['{052E1BCC-BE18-4C55-A258-53A41B83CFAC}']
+    {class} function init: JSMSMMSResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/SMSMMSResultParser')]
+  JSMSMMSResultParser = interface(JResultParser)
+    ['{C9057AB7-C397-4B4E-938D-996A0D64E50A}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JSMSParsedResult; overload; cdecl;
+  end;
+  TJSMSMMSResultParser = class(TJavaGenericImport<JSMSMMSResultParserClass, JSMSMMSResultParser>) end;
+
+  JSMSTOMMSTOResultParserClass = interface(JResultParserClass)
+    ['{EEB530F7-C77F-4FBF-9B8B-2D208C960EEE}']
+    {class} function init: JSMSTOMMSTOResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/SMSTOMMSTOResultParser')]
+  JSMSTOMMSTOResultParser = interface(JResultParser)
+    ['{D1EDB73C-5283-473D-A3D7-3185C5A130D0}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JSMSParsedResult; overload; cdecl;
+  end;
+  TJSMSTOMMSTOResultParser = class(TJavaGenericImport<JSMSTOMMSTOResultParserClass, JSMSTOMMSTOResultParser>) end;
+
+  JVEventResultParserClass = interface(JResultParserClass)
+    ['{A65F4F12-D1FD-4B5E-BF51-2C43B4455445}']
+    {class} function init: JVEventResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/VEventResultParser')]
+  JVEventResultParser = interface(JResultParser)
+    ['{64863BE3-7E0C-463C-B3FE-4E6A16C2CFF5}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JCalendarParsedResult; overload; cdecl;
+  end;
+  TJVEventResultParser = class(TJavaGenericImport<JVEventResultParserClass, JVEventResultParser>) end;
+
+  JBookmarkDoCoMoResultParserClass = interface(JAbstractDoCoMoResultParserClass)
+    ['{955F48DF-C47D-42DC-87C7-FFD284CB5B02}']
+    {class} function init: JBookmarkDoCoMoResultParser; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/client/result/BookmarkDoCoMoResultParser')]
+  JBookmarkDoCoMoResultParser = interface(JAbstractDoCoMoResultParser)
+    ['{B2F4F9F3-6B38-4DAB-BFBC-E24B106C3A17}']
+    function parse(result: JResult): JParsedResult; overload; cdecl;
+    function parse(result: JResult): JURIParsedResult; overload; cdecl;
+  end;
+  TJBookmarkDoCoMoResultParser = class(TJavaGenericImport<JBookmarkDoCoMoResultParserClass, JBookmarkDoCoMoResultParser>) end;
+
+  JInvertedLuminanceSourceClass = interface(JLuminanceSourceClass)
+    ['{E37E7649-3761-46F5-AEBF-71165B726174}']
+    {class} function init(luminanceSource: JLuminanceSource): JInvertedLuminanceSource; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/InvertedLuminanceSource')]
+  JInvertedLuminanceSource = interface(JLuminanceSource)
+    ['{6DFEE269-077B-4FC0-843E-06874F8CA973}']
+    function crop(int: Integer; int_1: Integer; int_2: Integer; int_3: Integer): JLuminanceSource; cdecl;
+    function getMatrix: TJavaArray<Byte>; cdecl;
+    function getRow(int: Integer; bytes: TJavaArray<Byte>): TJavaArray<Byte>; cdecl;
+    function invert: JLuminanceSource; cdecl;
+    function isCropSupported: Boolean; cdecl;
+    function isRotateSupported: Boolean; cdecl;
+    function rotateCounterClockwise: JLuminanceSource; cdecl;
+    function rotateCounterClockwise45: JLuminanceSource; cdecl;
+  end;
+  TJInvertedLuminanceSource = class(TJavaGenericImport<JInvertedLuminanceSourceClass, JInvertedLuminanceSource>) end;
+
+  JCode39ReaderClass = interface(JOneDReaderClass)
+    ['{A6535D8B-DCE5-4EBC-9B4E-F0F2E42A2075}']
+    {class} function init(boolean: Boolean; boolean_1: Boolean): JCode39Reader; overload; cdecl;
+    {class} function init(boolean: Boolean): JCode39Reader; overload; cdecl;
+    {class} function init: JCode39Reader; overload; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/Code39Reader')]
+  JCode39Reader = interface(JOneDReader)
+    ['{C1B94C29-DE32-405F-BF0F-8499DA6BC288}']
+    function decodeRow(int: Integer; bitArray: JBitArray; map: JMap): JResult; cdecl;
+  end;
+  TJCode39Reader = class(TJavaGenericImport<JCode39ReaderClass, JCode39Reader>) end;
+
+  JUPCEANReaderClass = interface(JOneDReaderClass)
+    ['{AA7415D2-5F74-4A7E-9777-BE4B452B1C60}']
+  end;
+
+  [JavaSignature('com/google/zxing/oned/UPCEANReader')]
+  JUPCEANReader = interface(JOneDReader)
+    ['{718F4518-C92F-40B5-BCF9-E518F3F18FB8}']
+    function decodeRow(int: Integer; bitArray: JBitArray; map: JMap): JResult; overload; cdecl;
+    function decodeRow(int: Integer; bitArray: JBitArray; ints: TJavaArray<Integer>; map: JMap): JResult; overload; cdecl;
+  end;
+  TJUPCEANReader = class(TJavaGenericImport<JUPCEANReaderClass, JUPCEANReader>) end;
+
+  JCode93WriterClass = interface(JOneDimensionalCodeWriterClass)
+    ['{3B878854-BD83-439C-97A6-0709329E4738}']
+    {class} function init: JCode93Writer; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/Code93Writer')]
+  JCode93Writer = interface(JOneDimensionalCodeWriter)
+    ['{E1BEC34A-45BD-4F4C-B8BD-1E9595DC9A67}']
+    function encode(string_1: JString): TJavaArray<Boolean>; cdecl;
+  end;
+  TJCode93Writer = class(TJavaGenericImport<JCode93WriterClass, JCode93Writer>) end;
+
+  JCode93ReaderClass = interface(JOneDReaderClass)
+    ['{6A80F2CE-57B4-45A6-AA13-4ED891A6953F}']
+    {class} function init: JCode93Reader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/Code93Reader')]
+  JCode93Reader = interface(JOneDReader)
+    ['{0BE42E48-571C-48F2-9B0F-6AB0261BB5C3}']
+    function decodeRow(int: Integer; bitArray: JBitArray; map: JMap): JResult; cdecl;
+  end;
+  TJCode93Reader = class(TJavaGenericImport<JCode93ReaderClass, JCode93Reader>) end;
+
+  JCodaBarReaderClass = interface(JOneDReaderClass)
+    ['{EA36728A-4A49-4F4D-B97D-969FFA4166B4}']
+    {class} function init: JCodaBarReader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/CodaBarReader')]
+  JCodaBarReader = interface(JOneDReader)
+    ['{4734D701-BBF6-443F-A174-401C2415EB47}']
+    function decodeRow(int: Integer; bitArray: JBitArray; map: JMap): JResult; cdecl;
+  end;
+  TJCodaBarReader = class(TJavaGenericImport<JCodaBarReaderClass, JCodaBarReader>) end;
+
+  JMultiFormatUPCEANReaderClass = interface(JOneDReaderClass)
+    ['{01FC8CDE-F6C5-4708-BCEB-9EB3A2285353}']
+    {class} function init(map: JMap): JMultiFormatUPCEANReader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/MultiFormatUPCEANReader')]
+  JMultiFormatUPCEANReader = interface(JOneDReader)
+    ['{133AA7F7-0CC2-4BBD-A40B-1C0070797855}']
+    function decodeRow(int: Integer; bitArray: JBitArray; map: JMap): JResult; cdecl;
+    procedure reset; cdecl;
+  end;
+  TJMultiFormatUPCEANReader = class(TJavaGenericImport<JMultiFormatUPCEANReaderClass, JMultiFormatUPCEANReader>) end;
+
+  JUPCEANWriterClass = interface(JOneDimensionalCodeWriterClass)
+    ['{9DEE84C1-62BF-4261-B071-1F86AC908282}']
+    {class} function init: JUPCEANWriter; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/UPCEANWriter')]
+  JUPCEANWriter = interface(JOneDimensionalCodeWriter)
+    ['{C78E6D52-9368-4BC9-9088-439C63A0D087}']
+    function getDefaultMargin: Integer; cdecl;
+  end;
+  TJUPCEANWriter = class(TJavaGenericImport<JUPCEANWriterClass, JUPCEANWriter>) end;
+
+  JEAN13ReaderClass = interface(JUPCEANReaderClass)
+    ['{51C2741A-BAF7-481C-8974-13992E7C86A8}']
+    {class} function init: JEAN13Reader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/EAN13Reader')]
+  JEAN13Reader = interface(JUPCEANReader)
+    ['{D8BB5ED4-DDD3-4DB6-919F-2465408D8334}']
+  end;
+  TJEAN13Reader = class(TJavaGenericImport<JEAN13ReaderClass, JEAN13Reader>) end;
+
+  JAbstractRSSReaderClass = interface(JOneDReaderClass)
+    ['{643C66F6-5C2B-4670-ABFE-EFB77E0E841D}']
+  end;
+
+  [JavaSignature('com/google/zxing/oned/rss/AbstractRSSReader')]
+  JAbstractRSSReader = interface(JOneDReader)
+    ['{0F7E187C-8B3D-4335-A382-9DD21202F644}']
+  end;
+  TJAbstractRSSReader = class(TJavaGenericImport<JAbstractRSSReaderClass, JAbstractRSSReader>) end;
+
+  JRSSExpandedReaderClass = interface(JAbstractRSSReaderClass)
+    ['{F34863DF-FB53-4729-AFF4-45E48791B08F}']
+    {class} function init: JRSSExpandedReader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/rss/expanded/RSSExpandedReader')]
+  JRSSExpandedReader = interface(JAbstractRSSReader)
+    ['{D5F540A8-CBCA-4306-8072-F418C6CD168B}']
+    function decodeRow(int: Integer; bitArray: JBitArray; map: JMap): JResult; cdecl;
+    procedure reset; cdecl;
+  end;
+  TJRSSExpandedReader = class(TJavaGenericImport<JRSSExpandedReaderClass, JRSSExpandedReader>) end;
+
+  JAI01decoderClass = interface(JAbstractExpandedDecoderClass)
+    ['{7F452CC6-5585-4900-9DF9-0AF902B0A3B2}']
+  end;
+
+  [JavaSignature('com/google/zxing/oned/rss/expanded/decoders/AI01decoder')]
+  JAI01decoder = interface(JAbstractExpandedDecoder)
+    ['{1E1B87D6-D9A8-4250-B513-8129112AA42E}']
+  end;
+  TJAI01decoder = class(TJavaGenericImport<JAI01decoderClass, JAI01decoder>) end;
+
+  JRSS14ReaderClass = interface(JAbstractRSSReaderClass)
+    ['{6A3C51F7-3948-47F6-A4F4-02D629B50213}']
+    {class} function init: JRSS14Reader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/rss/RSS14Reader')]
+  JRSS14Reader = interface(JAbstractRSSReader)
+    ['{BC9F81F9-3D68-4DF9-9103-1B16FF36404E}']
+    function decodeRow(int: Integer; bitArray: JBitArray; map: JMap): JResult; cdecl;
+    procedure reset; cdecl;
+  end;
+  TJRSS14Reader = class(TJavaGenericImport<JRSS14ReaderClass, JRSS14Reader>) end;
+
+  JITFReaderClass = interface(JOneDReaderClass)
+    ['{BDFDBB24-EC04-4F0B-AEDA-52624C6FE54C}']
+    {class} function init: JITFReader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/ITFReader')]
+  JITFReader = interface(JOneDReader)
+    ['{48F14659-D4A1-41A8-82E3-811BB6A937A8}']
+    function decodeRow(int: Integer; bitArray: JBitArray; map: JMap): JResult; cdecl;
+  end;
+  TJITFReader = class(TJavaGenericImport<JITFReaderClass, JITFReader>) end;
+
+  JCode128ReaderClass = interface(JOneDReaderClass)
+    ['{6017068D-A4C7-4C4A-9561-D11075EE5E66}']
+    {class} function init: JCode128Reader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/Code128Reader')]
+  JCode128Reader = interface(JOneDReader)
+    ['{D555D52D-7B28-4575-A144-F17D166D5180}']
+    function decodeRow(int: Integer; bitArray: JBitArray; map: JMap): JResult; cdecl;
+  end;
+  TJCode128Reader = class(TJavaGenericImport<JCode128ReaderClass, JCode128Reader>) end;
+
+  JEAN8ReaderClass = interface(JUPCEANReaderClass)
+    ['{EEA4FEBF-7405-4873-8365-5A1BDD0728EC}']
+    {class} function init: JEAN8Reader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/EAN8Reader')]
+  JEAN8Reader = interface(JUPCEANReader)
+    ['{58A69562-6BEC-4F59-BC4A-7853C539C155}']
+  end;
+  TJEAN8Reader = class(TJavaGenericImport<JEAN8ReaderClass, JEAN8Reader>) end;
+
+  JCode39WriterClass = interface(JOneDimensionalCodeWriterClass)
+    ['{815EE761-F9B6-4919-85B4-33FCC41ACECE}']
+    {class} function init: JCode39Writer; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/Code39Writer')]
+  JCode39Writer = interface(JOneDimensionalCodeWriter)
+    ['{C47AD710-C22A-4E8F-AC90-C0DE46C9A1E2}']
+    function encode(string_1: JString): TJavaArray<Boolean>; cdecl;
+  end;
+  TJCode39Writer = class(TJavaGenericImport<JCode39WriterClass, JCode39Writer>) end;
+
+  JUPCEReaderClass = interface(JUPCEANReaderClass)
+    ['{9BC7E873-E6CE-4B07-9FA4-87EC52E827C5}']
+    {class} function convertUPCEtoUPCA(string_1: JString): JString; cdecl;
+    {class} function init: JUPCEReader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/UPCEReader')]
+  JUPCEReader = interface(JUPCEANReader)
+    ['{9EFDB20B-F262-40DF-BBC0-460EEEDB41A4}']
+  end;
+  TJUPCEReader = class(TJavaGenericImport<JUPCEReaderClass, JUPCEReader>) end;
+
+  JEAN13WriterClass = interface(JUPCEANWriterClass)
+    ['{4BF6C54F-C6F1-4F1B-9E8E-4CE29E855B45}']
+    {class} function init: JEAN13Writer; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/EAN13Writer')]
+  JEAN13Writer = interface(JUPCEANWriter)
+    ['{812A7EF6-F4D6-4E86-B63F-72EF961A37D8}']
+    function encode(string_1: JString): TJavaArray<Boolean>; cdecl;
+  end;
+  TJEAN13Writer = class(TJavaGenericImport<JEAN13WriterClass, JEAN13Writer>) end;
+
+  JMultiFormatOneDReaderClass = interface(JOneDReaderClass)
+    ['{FD699968-36C5-4D24-B6B4-B5972641FB00}']
+    {class} function init(map: JMap): JMultiFormatOneDReader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/MultiFormatOneDReader')]
+  JMultiFormatOneDReader = interface(JOneDReader)
+    ['{4C3A0AE5-345E-4E66-B671-F4A353C5308E}']
+    function decodeRow(int: Integer; bitArray: JBitArray; map: JMap): JResult; cdecl;
+    procedure reset; cdecl;
+  end;
+  TJMultiFormatOneDReader = class(TJavaGenericImport<JMultiFormatOneDReaderClass, JMultiFormatOneDReader>) end;
+
+  JHybridBinarizerClass = interface(JGlobalHistogramBinarizerClass)
+    ['{4F63CC97-EFDD-4E6C-B4A6-CDE25B8694E6}']
+    {class} function init(luminanceSource: JLuminanceSource): JHybridBinarizer; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/common/HybridBinarizer')]
+  JHybridBinarizer = interface(JGlobalHistogramBinarizer)
+    ['{C43E0536-8D81-4DDA-BE96-5EA37B618674}']
+    function createBinarizer(luminanceSource: JLuminanceSource): JBinarizer; cdecl;
+    function getBlackMatrix: JBitMatrix; cdecl;
+  end;
+  TJHybridBinarizer = class(TJavaGenericImport<JHybridBinarizerClass, JHybridBinarizer>) end;
+
+  JEAN8WriterClass = interface(JUPCEANWriterClass)
+    ['{C4ABFC60-6C11-42C3-B91D-E8BF1D22FE37}']
+    {class} function init: JEAN8Writer; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/EAN8Writer')]
+  JEAN8Writer = interface(JUPCEANWriter)
+    ['{FDCEC03E-5CE0-4E25-AC0A-8427A474B1C7}']
+    function encode(string_1: JString): TJavaArray<Boolean>; cdecl;
+  end;
+  TJEAN8Writer = class(TJavaGenericImport<JEAN8WriterClass, JEAN8Writer>) end;
+
+  JUPCAReaderClass = interface(JUPCEANReaderClass)
+    ['{358395C1-A53C-4CFE-B9E4-D72FBBC36AEE}']
+    {class} function init: JUPCAReader; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/UPCAReader')]
+  JUPCAReader = interface(JUPCEANReader)
+    ['{6C8EF963-1915-467B-8FF8-EDE4A509932B}']
+    function decode(binaryBitmap: JBinaryBitmap; map: JMap): JResult; overload; cdecl;
+    function decode(binaryBitmap: JBinaryBitmap): JResult; overload; cdecl;
+    function decodeRow(int: Integer; bitArray: JBitArray; map: JMap): JResult; overload; cdecl;
+    function decodeRow(int: Integer; bitArray: JBitArray; ints: TJavaArray<Integer>; map: JMap): JResult; overload; cdecl;
+  end;
+  TJUPCAReader = class(TJavaGenericImport<JUPCAReaderClass, JUPCAReader>) end;
+
+  JUPCEWriterClass = interface(JUPCEANWriterClass)
+    ['{1DC5D05F-2DFF-4C09-9121-1119BFEDCD03}']
+    {class} function init: JUPCEWriter; cdecl;
+  end;
+
+  [JavaSignature('com/google/zxing/oned/UPCEWriter')]
+  JUPCEWriter = interface(JUPCEANWriter)
+    ['{F0B99B17-E2B0-409D-9DDC-1F0AE7CF58CD}']
+    function encode(string_1: JString): TJavaArray<Boolean>; cdecl;
+  end;
+  TJUPCEWriter = class(TJavaGenericImport<JUPCEWriterClass, JUPCEWriter>) end;
+
+  JAI01weightDecoderClass = interface(JAI01decoderClass)
+    ['{08A81A64-74EC-412E-9DBE-CABBEA8B442D}']
+  end;
+
+  [JavaSignature('com/google/zxing/oned/rss/expanded/decoders/AI01weightDecoder')]
+  JAI01weightDecoder = interface(JAI01decoder)
+    ['{0E129A4B-B211-42D4-9C42-35B41D6D0FC5}']
+  end;
+  TJAI01weightDecoder = class(TJavaGenericImport<JAI01weightDecoderClass, JAI01weightDecoder>) end;
+
+  JAI013x0xDecoderClass = interface(JAI01weightDecoderClass)
+    ['{D09E4B1A-B2BA-46B1-B842-BB7603EC1159}']
+  end;
+
+  [JavaSignature('com/google/zxing/oned/rss/expanded/decoders/AI013x0xDecoder')]
+  JAI013x0xDecoder = interface(JAI01weightDecoder)
+    ['{BBE03AD2-44DC-4881-9C46-D892C97DDBFE}']
+    function parseInformation: JString; cdecl;
+  end;
+  TJAI013x0xDecoder = class(TJavaGenericImport<JAI013x0xDecoderClass, JAI013x0xDecoder>) end;
+
+implementation
+
+end.

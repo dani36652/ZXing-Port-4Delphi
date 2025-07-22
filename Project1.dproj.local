@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/06/25 11:43:39.000.576,=C:\Users\drodriguez\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/06/25 15:12:19.000.008,=C:\Users\drodriguez\Desktop\Fishers\Pruebas_Desarrollos\Pruebas-aar\zxing-android-embedded.aar</Transaction>
+    <Transaction>2025/06/25 15:19:18.000.248,C:\Users\drodriguez\Desktop\Fishers\Pruebas_Desarrollos\Pruebas-aar\zxing-android-embedded.aar=</Transaction>
+    <Transaction>2025/06/25 15:19:25.000.366,=C:\Users\drodriguez\Desktop\Fishers\Pruebas_Desarrollos\Pruebas-aar\zxing-android-embedded.aar</Transaction>
+    <Transaction>2025/06/25 15:20:48.000.376,C:\Users\drodriguez\Documents\Embarcadero\Studio\Projects\Unit1.fmx=C:\Users\drodriguez\Desktop\Fishers\Pruebas_Desarrollos\Pruebas-aar\Unit1.fmx</Transaction>
+    <Transaction>2025/06/25 15:20:48.000.376,C:\Users\drodriguez\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\drodriguez\Desktop\Fishers\Pruebas_Desarrollos\Pruebas-aar\Unit1.pas</Transaction>
+    <Transaction>2025/06/25 15:20:49.000.394,C:\Users\drodriguez\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\drodriguez\Desktop\Fishers\Pruebas_Desarrollos\Pruebas-aar\Project1.dproj</Transaction>
+    <Transaction>2025/07/02 14:56:49.000.444,C:\Users\drodriguez\Desktop\Fishers\Pruebas_Desarrollos\Pruebas-aar\zxing-android-embedded.aar=</Transaction>
+    <Transaction>2025/07/02 15:00:25.000.029,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\zxing-android-embedded-release.aar</Transaction>
+    <Transaction>2025/07/02 15:02:18.000.256,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\libs\core-3.4.1.jar</Transaction>
+    <Transaction>2025/07/02 15:07:00.000.012,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\ZxingBridge.pas</Transaction>
+    <Transaction>2025/07/02 15:19:48.000.523,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\ZXing.JNI.pas</Transaction>
+    <Transaction>2025/07/02 15:26:58.000.963,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\libs\core-3.4.1.jar=</Transaction>
+    <Transaction>2025/07/02 15:27:25.000.253,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\libs\core-3.4.1.jar</Transaction>
+    <Transaction>2025/07/02 16:21:32.000.511,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\libs\core-3.4.1.jar=</Transaction>
+    <Transaction>2025/07/02 16:21:34.000.896,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\zxing-android-embedded-release.aar=</Transaction>
+    <Transaction>2025/07/02 16:26:19.000.101,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\ZXingBridge.pas</Transaction>
+    <Transaction>2025/07/02 16:26:19.000.069,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\ZXing.JNI.pas</Transaction>
+    <Transaction>2025/07/02 16:26:50.000.191,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\ZXing.JNI.pas=</Transaction>
+    <Transaction>2025/07/02 16:26:54.000.237,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\ZXingBridge.pas=</Transaction>
+    <Transaction>2025/07/02 16:28:10.000.911,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\ZXingBridge.pas.pas</Transaction>
+    <Transaction>2025/07/02 16:28:10.000.865,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\ZXing.JNI.pas.pas</Transaction>
+    <Transaction>2025/07/02 16:34:16.000.308,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\ZXing.JNI.pas.pas=</Transaction>
+    <Transaction>2025/07/02 16:36:03.000.994,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\Zxing.JNI.pas</Transaction>
+    <Transaction>2025/07/02 16:38:32.000.628,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\Zxing.JNI.pas=</Transaction>
+    <Transaction>2025/07/02 16:39:15.000.727,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\ZXing.JNI.pas</Transaction>
+    <Transaction>2025/07/02 16:40:54.000.362,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\ZXingBridge.pas.pas=</Transaction>
+    <Transaction>2025/07/02 16:44:43.000.963,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\Zxing.JNI.pas</Transaction>
+    <Transaction>2025/07/02 16:44:44.000.010,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\ZxingBridge.pas</Transaction>
+    <Transaction>2025/07/02 16:46:14.000.547,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\Zxing.JNI.pas=</Transaction>
+    <Transaction>2025/07/02 16:48:45.000.971,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\ZxingBridge.pas=</Transaction>
+    <Transaction>2025/07/02 16:48:54.000.564,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\ZxingBridge.pas</Transaction>
+    <Transaction>2025/07/02 16:49:13.000.097,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\ZxingBridge.pas=</Transaction>
+    <Transaction>2025/07/02 16:51:34.000.665,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\Zxing.JNI.pas</Transaction>
+    <Transaction>2025/07/02 16:51:34.000.743,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\ZxingBridge.pas</Transaction>
+    <Transaction>2025/07/02 17:02:33.000.212,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\Zxing.JNI.pas=</Transaction>
+    <Transaction>2025/07/02 17:03:11.000.218,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\Zxing.JNI.pas</Transaction>
+    <Transaction>2025/07/02 17:12:18.000.588,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\zxing-android-embedded-release.aar</Transaction>
+    <Transaction>2025/07/02 17:12:27.000.277,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\libs\core-3.4.1.jar</Transaction>
+    <Transaction>2025/07/03 10:10:17.000.043,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\zxing-android-embedded-release.aar=</Transaction>
+    <Transaction>2025/07/03 10:10:24.000.434,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\zxing-android-embedded-release.aar</Transaction>
+    <Transaction>2025/07/03 12:58:30.000.818,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\libs\aar\zxing-android-embedded-release.aar</Transaction>
+    <Transaction>2025/07/03 12:58:44.000.092,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\libs\jar\core-3.5.3.jar</Transaction>
+    <Transaction>2025/07/03 12:58:51.000.458,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\Zxing.JNI.pas=</Transaction>
+    <Transaction>2025/07/03 12:58:51.000.546,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\ZxingBridge.pas=</Transaction>
+    <Transaction>2025/07/03 13:10:30.000.515,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\libs\aar\zxing-android-embedded-release.aar=</Transaction>
+    <Transaction>2025/07/03 13:10:42.000.723,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\libs\aar\zxing-android-embedded-release.aar</Transaction>
+    <Transaction>2025/07/03 13:17:45.000.004,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\libs\aar\zxing-android-embedded-release.aar=</Transaction>
+    <Transaction>2025/07/03 13:17:54.000.336,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\libs\aar\zxing-android-embedded-release.aar</Transaction>
+    <Transaction>2025/07/03 13:29:45.000.928,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\libs\aar\zxing-android-embedded-release.aar=</Transaction>
+    <Transaction>2025/07/03 13:29:54.000.554,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\libs\aar\zxing-android-embedded-release.aar</Transaction>
+    <Transaction>2025/07/03 13:39:26.000.059,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\libs\aar\zxing-android-embedded-release.aar=</Transaction>
+    <Transaction>2025/07/03 13:39:38.000.553,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\libs\aar\zxing-android-embedded-release.aar</Transaction>
+    <Transaction>2025/07/03 13:45:10.000.633,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\libs\aar\zxing-android-embedded-release.aar=</Transaction>
+    <Transaction>2025/07/03 13:45:22.000.361,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\libs\aar\zxing-android-embedded-release.aar</Transaction>
+    <Transaction>2025/07/03 15:17:53.000.869,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\interfaces\Zxing.JNI.pas</Transaction>
+    <Transaction>2025/07/03 15:17:53.000.932,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\interfaces\ZxingBridge.pas</Transaction>
+    <Transaction>2025/07/22 11:29:25.714,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\interfaces\Zxing.JNI.pas=</Transaction>
+    <Transaction>2025/07/22 11:29:25.902,C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\interfaces\ZxingBridge.pas=</Transaction>
+    <Transaction>2025/07/22 11:29:59.219,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\units\Zxing.JNI.pas</Transaction>
+    <Transaction>2025/07/22 11:29:59.282,=C:\Users\drodriguez\Desktop\Ta\Pruebas-aar\units\ZxingBridge.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile Android64="MR7PSGG6NZLNEU7T" Android=""/>
+	</ActiveMobileDevice>
+</BorlandProject>
